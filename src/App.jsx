@@ -17,7 +17,7 @@ import EBook from './Pages/E-bookMonograph.jsx';
 import ESerial from './Pages/E-seria.jsx';
 // import Contact from './Components/Contact/Contact.jsx';
 import Faq from './Components/FAQ/Faq.jsx';
-import Pdf from './Components/pdf/pdf.jsx';
+import Pdf from './Components/pdf/Pdf.jsx';
 import Guide from './Components/Guide/Guide.jsx';
 import Chatbot from './Components/Chatbot/Chatbot';
 const App = () =>{
