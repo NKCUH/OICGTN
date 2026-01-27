@@ -3,9 +3,9 @@ import {Autoplay, Navigation, Pagination, Scrollbar, A11y } from "swiper/modules
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import slide1 from "../../img/Slide1.jpg";
-import slide2 from "../../img/Slide2.jpg";
-import slide3 from "../../img/Slide3.jpg";
+import slide1 from "../../../img/Slide1.jpg";
+import slide2 from "../../../img/Slide2.jpg";
+import slide3 from "../../../img/Slide3.jpg";
 
 // Import Swiper styles
 import "swiper/css";
