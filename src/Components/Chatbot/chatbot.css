@@ -1,0 +1,15 @@
+.saathi-widget{position:fixed;right:20px;bottom:20px;z-index:2000;font-family:Inter,system-ui,Arial}
+.saathi-button{width:56px;height:56px;border-radius:999px;background:linear-gradient(135deg,#f6c90e,#f59e0b);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.2);cursor:pointer}
+.saathi-avatar{font-weight:700;color:#103050}
+.saathi-panel{width:360px;background:#fff;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,0.2);overflow:hidden;display:flex;flex-direction:column}
+.saathi-header{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:#103050;color:#fff}
+.saathi-title{font-weight:700}
+.saathi-controls select{margin-right:8px;padding:4px;border-radius:6px;border:none}
+.saathi-messages{padding:12px;height:260px;overflow:auto;background:linear-gradient(180deg,#f8fafc,#ffffff)}
+.msg{margin-bottom:10px}
+.msg.saathi .msg-text{background:#103050;color:#fff;padding:8px 10px;border-radius:10px;display:inline-block}
+.msg.user .msg-text{background:#eef2ff;color:#103050;padding:8px 10px;border-radius:10px;display:inline-block}
+.saathi-input{display:flex;padding:10px;border-top:1px solid #eee}
+.saathi-input input{flex:1;padding:8px;border-radius:8px;border:1px solid #ddd;margin-right:8px}
+.saathi-input button{background:#103050;color:#fff;padding:8px 12px;border-radius:8px;border:none}
+.saathi-widget.open .saathi-button{transform:translateY(-8px)}

@@ -1,0 +1,45 @@
+.btn1{
+    background-color: white;
+    padding: 0.5rem;
+    border: 2px solid #2986ea;
+    border-radius: 0.5rem;
+    border-width: 2px;
+    font-weight: 700;
+    color: #2986ea;
+    transition: all 0.4s;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.btn1:hover{
+    background-color: rgb(230, 230, 230);
+}
+
+.btn2{
+    background-color: white;
+    padding: 0.5rem;
+    border: 2px solid #28A745;
+    border-radius: 0.5rem;
+    border-width: 2px;
+    font-weight: 700;
+    color: #28A745;
+    transition: all 0.4s;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.btn2:hover{
+    background-color: rgb(230, 230, 230);
+}
+.btn3{
+    background-color: white;
+    padding: 0.5rem;
+    border: 2px solid #9C27B0;
+    border-radius: 0.5rem;
+    border-width: 2px;
+    font-weight: 700;
+    color: #9C27B0;
+    transition: all 0.4s;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.btn3:hover{
+    background-color: rgb(230, 230, 230);
+}
+
+

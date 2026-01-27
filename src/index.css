@@ -1,0 +1,73 @@
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+#outputBox{
+  margin-top: 5%;
+  background-color: aliceblue;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+
+#output{
+  width: 70%;
+  padding: 2%;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+#copy{
+  background-color: blue;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
+@media screen and (max-width: 760px) {
+  .footer-row {
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+  }
+  .footer-right {
+    margin-top: 10%;
+  }
+  center > a{
+    font-size: 30px;
+  }
+  .developer{
+    text-align: center;
+    padding: 1rem !important;
+  }
+}
+@media screen and (max-width: 550px) {
+  #developersName {
+    flex-direction: column;
+  }
+}
+
+.drop ul{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  border: none;
+}
+.drop {
+  z-index: 100;
+}

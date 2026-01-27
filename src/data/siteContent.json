@@ -1,0 +1,56 @@
+[
+  {
+    "id": "guide",
+    "path": "/Guide",
+    "title": "Reference Guide of Indian Bibliographic Standard",
+    "content": "Reference Guide of Indian Bibliographic Standard. Sections include Book, e-Book, Contribution within a Book, Journal, Contribution within Journal, e-Journal, e-Research Article in Journal, Websites, Electronic Message, Patents. Each section lists a reference format and in-text citation examples. Contact: Naresh Kumar - nareshiiim.kumar@gmail.com"
+  },
+  {
+    "id": "faq",
+    "path": "/FAQ",
+    "title": "FAQs",
+    "content": "What is Online Citation Tool? Online Bibliographic Citation Tool generates citations in the Indian Bibliographic Reference Style. Who should use it? Academic community. What resources? Books, book chapters, e-books, journals, research papers, e-journals, websites, patents, messages. How it works? Choose a source, open the form, fill details and submit to generate a citation. Feature: copy to Word. Persistence: citation disappears when you switch source, copy immediately."
+  },
+  {
+    "id": "home",
+    "path": "/",
+    "title": "Home — Online Indian Bibliographic Citation Generation Tool",
+    "content": "Cite a Book, Cite a Journal, You can also Cite: Websites, Electronic Messages, Patents. Upload a PDF to extract metadata. About: The tool is based on the 3rd revision of ISO guidelines adopted by Bureau of Indian Standards to generate citations in Indian Bibliographic Reference Style."
+  },
+  {
+    "id": "books-form",
+    "path": "/book-and-monograph",
+    "title": "Book / Monograph Form",
+    "content": "Fields: Name of Creator(s), Year, Title of the Items, Medium Designation, Subsidiary Titles, Edition, Place, Publisher, Date of Publication, Date of citation, Series title and number, Standard Identifier (ISBN, eISBN, DOI), Availability and access (DOI, URI, URL), Location. Actions: Get Citation, Copy, Narrative, Parenthetical."
+  },
+  {
+    "id": "serial-form",
+    "path": "/serial",
+    "title": "Journal / Serial Form",
+    "content": "Fields: Title of the Journal, Subsidiary Title, Medium Designation, Edition, Year, Place, Date of Publication, Publisher, Numeration (Volume/Number/Issue), Date of Citation, Standard Identifier (ISSN/eISSN), Availability and Access. Action: Get Citation."
+  },
+  {
+    "id": "contribution-form",
+    "path": "/contribution-within-book",
+    "title": "Contribution within a Book Form",
+    "content": "Fields: Name of creator(s), Year, Title of the contribution, Additional General Information, Name of creators of the host item, Title of the host Item, Medium Designation, Subsidiary Titles, Edition, Place, Publisher, Date of Publication, Numeration, Range of page numbers of the contribution, Date of Citation, Series title and number, Standard Identifier, Availability and Access, Location."
+  },
+  {
+    "id": "websites-form",
+    "path": "/websites",
+    "title": "Website Form",
+    "content": "Fields: Name of Creator(s), Standard Identifiers of creators' public identities, Page Title, Website Title, Edition, Format And Resource Type, System Requirements, Subsidiary Creator, Place, Publisher, Date of Publication, Standard Identifier, Availability and Access, Date of Citation. Action: Get Citation."
+  },
+  {
+    "id": "patents-form",
+    "path": "/patents",
+    "title": "Patents Form",
+    "content": "Fields: Name of Creator(s), Patent application country, Standard Identifiers of creators, Title of the information resource, Series Title, Subsidiary creator, Date of Application, Date of Issuance, Patent Number, Persistent Identifiers (URL/URI/DOI), Item Attributes, Date of Citation, Location, Relationships. Action: Get Citation."
+  },
+  {
+    "id": "electronic-message-form",
+    "path": "/electronic-messages",
+    "title": "Electronic Message Form",
+    "content": "Fields: Name of Creator(s), Year, Title of The Message, Title of the host message system, Medium Designation (Online, Electronic mail, Message board), Date Message Was Sent, Time Message Was Sent, Date Of Citation, Availability and access, Other Information. Action: Get Citation."
+  }
+]
