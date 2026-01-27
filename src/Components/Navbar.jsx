@@ -18,7 +18,7 @@ const Header = () => {
           {/* left: logo area (fills navbar height and a fixed width before the search box) */}
           <div className="flex items-center flex-none h-20 w-72">
             <Link to="/" className="h-full flex items-center">
-              <img className="h-full w-auto object-contain" src="img/logo.png" alt="Logo" />
+              <img className="h-full w-auto object-contain" src="/Logo.jpg" alt="Logo" />
             </Link>
           </div>
 

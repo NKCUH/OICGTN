@@ -3,6 +3,10 @@ import {Autoplay, Navigation, Pagination, Scrollbar, A11y } from "swiper/modules
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import slide1 from "../../img/Slide1.jpg";
+import slide2 from "../../img/Slide2.jpg";
+import slide3 from "../../img/Slide3.jpg";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -29,9 +33,9 @@ export default () => {
       pagination={{ clickable: true }}
       scrollbar={{enabled: false}}
     >
-      <SwiperSlide><img src="img/Slide1.jpg" className=" h-full w-full" alt="" /></SwiperSlide>
-      <SwiperSlide><img src="img/Slide2.jpg" className=" h-full w-full" alt="" /></SwiperSlide>
-      <SwiperSlide><img src="img/Slide3.jpg" className="h-full w-full" alt="" /></SwiperSlide>
+  <SwiperSlide><img src={slide1} className=" h-full w-full" alt="" /></SwiperSlide>
+  <SwiperSlide><img src={slide2} className=" h-full w-full" alt="" /></SwiperSlide>
+  <SwiperSlide><img src={slide3} className="h-full w-full" alt="" /></SwiperSlide>
     </Swiper>
   );
 };
