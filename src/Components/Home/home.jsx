@@ -220,14 +220,7 @@ const HomeComponent = () => {
 
     <div className="w-70 mt-10 md:ml-20 md:mr-20 rounded-lg flex font-sans justify-center items-center flex-col bg-gray-200">
       <h3 className="mt-4 md:p-0 p-2 font-bold text-center font-sans ">About Online Indian Bibliographic Citation Generation Tool</h3>
-      <p className="col-lg-10 md:p-0 p-2 fs-5">The Online Indian Bibliographic Citation Generation Tool is based on
-          3rd revision of information and documentation – guidelines for
-          bibliographic references and citations to information resources issued
-          by the International Organization for Standardization (ISO) which is
-          adopted by Bureau of Indian Standards. Through this citation tool,
-          citations or reference entries may be generated for different
-          resources like books, serials, websites and patents in the format as
-          specified in the Indian Bibliographic Reference Style.</p>
+      <p className="col-lg-10 md:p-0 p-2 fs-5">The Online Indian Citation Generation Tool (OICGT) is a web-based application developed by Mr. Naresh Kumar and Prof. Margam Madhusudhan and released in 2026 (Kumar & Madhusudhan, 2026). OICGT enables users to generate citations and reference entries for a wide range of information resources, including books, serial publications, websites, and patents, in accordance with the Indian Bibliographic Reference Style. By streamlining the citation process, the tool supports accuracy, consistency, and improved academic productivity..</p>
      
       </div>
       
