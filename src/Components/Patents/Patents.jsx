@@ -48,20 +48,48 @@ const PatentsForm = () => {
 
   const [formFields, setFormFields] = useState([["", ""]]);
   const { metadata, chosenForm } = useContext(MetadataContext);
+
+  // Safely converts CrossRef-style date objects or plain values to a string
+  const safeDate = (val) => {
+    if (!val) return "";
+    if (typeof val === "string") return val;
+    if (typeof val === "number") return String(val);
+    if (val["date-parts"] && Array.isArray(val["date-parts"])) {
+      const parts = val["date-parts"][0];
+      if (!parts || !parts.length) return "";
+      const [y, m, d] = parts;
+      if (y && m && d)
+        return `${y}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+      if (y && m) return `${y}-${String(m).padStart(2, "0")}`;
+      return String(y);
+    }
+    return "";
+  };
+
   useEffect(() => {
     if (!metadata) return;
     if (chosenForm && chosenForm !== "patent" && chosenForm !== "") return;
     setPatentsCitation((prev) => ({
       ...prev,
-      titleOfTheInformationSource: metadata.title || prev.titleOfTheInformationSource,
-      dateOfIssuance: metadata.dateOfPublication || prev.dateOfIssuance,
+      titleOfTheInformationSource:
+        metadata.title || prev.titleOfTheInformationSource,
+      dateOfIssuance:
+        safeDate(metadata.dateOfPublication) ||
+        safeDate(metadata.dateOfIssuance) ||
+        prev.dateOfIssuance,
+      dateOfApplication:
+        safeDate(metadata.dateOfApplication) || prev.dateOfApplication,
       patentNumber: metadata.patentNumber || prev.patentNumber,
-      persistentIdentifiers: metadata.doi || metadata.url || prev.persistentIdentifiers,
+      persistentIdentifiers:
+        metadata.doi || metadata.url || prev.persistentIdentifiers,
       publisher: metadata.publisher || prev.publisher,
     }));
 
     if (metadata.authors && metadata.authors.length > 0) {
-      const newFields = metadata.authors.map((a) => [a.firstName || "", a.lastName || ""]);
+      const newFields = metadata.authors.map((a) => [
+        a.firstName || "",
+        a.lastName || "",
+      ]);
       setFormFields(newFields.length ? newFields : [["", ""]]);
     }
   }, [metadata, chosenForm]);
@@ -503,7 +531,8 @@ const PatentsForm = () => {
                         {item[1] === "" || item[1] === undefined ? "" : ""}
                       </span>
                     );
-                  })}{")"}
+                  })}
+                  {")"}
                 </p>
               </div>
             </div>

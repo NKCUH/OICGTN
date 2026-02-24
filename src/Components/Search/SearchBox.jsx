@@ -63,7 +63,8 @@ const SearchBox = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
-  const { applyMetadata, chosenForm, setChosenForm } = useContext(MetadataContext);
+  const { applyMetadata, chosenForm, setChosenForm } =
+    useContext(MetadataContext);
   const navigate = useNavigate();
 
   const doSearch = async () => {
@@ -80,7 +81,8 @@ const SearchBox = () => {
         if (it.doi && it.doi.toLowerCase().includes(ql)) return true;
         if (it.isbn && it.isbn.toLowerCase().includes(ql)) return true;
         if (it.url && it.url.toLowerCase().includes(ql)) return true;
-        if (it.authors && it.authors.join(" ").toLowerCase().includes(ql)) return true;
+        if (it.authors && it.authors.join(" ").toLowerCase().includes(ql))
+          return true;
         if (it.source && it.source.toLowerCase().includes(ql)) return true;
         return false;
       });
@@ -96,7 +98,8 @@ const SearchBox = () => {
       if (looksLikeUrl) {
         // normalize url: add http:// if protocol missing so it's clickable
         let normalized = q;
-        if (!/^[a-z]+:\/\//i.test(normalized)) normalized = "http://" + normalized;
+        if (!/^[a-z]+:\/\//i.test(normalized))
+          normalized = "http://" + normalized;
         // Use hostname as title when possible
         let title = q;
         try {
@@ -112,17 +115,22 @@ const SearchBox = () => {
       if (synthetic) {
         const base = (filtered.length > 0 ? filtered : res) || [];
         // ensure we don't duplicate identical url entries (compare normalized hosts/urls)
-        const deduped = [synthetic, ...base.filter((b) => {
-          if (!b) return true;
-          if (!b.url) return true;
-          try {
-            const bu = new URL(b.url.indexOf("://") === -1 ? "http://" + b.url : b.url);
-            const su = new URL(synthetic.url);
-            return bu.href !== su.href;
-          } catch (err) {
-            return b.url !== synthetic.url;
-          }
-        })];
+        const deduped = [
+          synthetic,
+          ...base.filter((b) => {
+            if (!b) return true;
+            if (!b.url) return true;
+            try {
+              const bu = new URL(
+                b.url.indexOf("://") === -1 ? "http://" + b.url : b.url,
+              );
+              const su = new URL(synthetic.url);
+              return bu.href !== su.href;
+            } catch (err) {
+              return b.url !== synthetic.url;
+            }
+          }),
+        ];
         setResults(deduped.slice(0, 10));
       } else {
         setResults((filtered.length > 0 ? filtered : res).slice(0, 10));
@@ -137,9 +145,38 @@ const SearchBox = () => {
 
   const onSelect = (item) => {
     const mapped = mapToFormMetadata(item);
-    // Directly apply all mapped metadata to the chosen form (no preview)
-    applyMetadata(mapped, null, chosenForm || null);
+
+    // Detect target form: honour dropdown selection, else auto-detect from item data
+    let targetForm = chosenForm || null;
+    if (!targetForm) {
+      if (
+        item.source === "manual-url" ||
+        (item.url && !item.isbn && !item.doi)
+      ) {
+        targetForm = "website";
+      } else if (
+        item.raw &&
+        (item.raw.patentNumber ||
+          item.raw.patent_number ||
+          item.raw.publicationNumber)
+      ) {
+        targetForm = "patent";
+      } else if (
+        mapped.doi ||
+        (item.raw && (item.raw.volume || item.raw.issue))
+      ) {
+        targetForm = "serial-contribution";
+      } else if (mapped.isbn) {
+        targetForm = "book";
+      } else {
+        targetForm = "book"; // sensible default
+      }
+    }
+
+    applyMetadata(mapped, null, targetForm);
     setResults([]);
+    setQuery("");
+    navigate(routeForForm(targetForm));
   };
 
   const onFormChange = (e) => {
@@ -149,8 +186,12 @@ const SearchBox = () => {
   // preview/field-selection removed: selection now immediately applies metadata to forms
 
   return (
-    <div className="search-box">
-      <select className="search-target" value={chosenForm || ""} onChange={onFormChange}>
+    <div className="search-box flex justify-center">
+      <select
+        className="search-target"
+        value={chosenForm || ""}
+        onChange={onFormChange}
+      >
         <option value="">Autofill: Any</option>
         <option value="book">Book</option>
         <option value="ebook">E-Book</option>
@@ -180,7 +221,9 @@ const SearchBox = () => {
           {results.map((r, i) => (
             <li key={i} onClick={() => onSelect(r)}>
               <div className="r-title">{r.title}</div>
-              <div className="r-sub">{r.authors?.join(", ") || r.publisher || r.source}</div>
+              <div className="r-sub">
+                {r.authors?.join(", ") || r.publisher || r.source}
+              </div>
               <div className="r-id">{r.doi || r.isbn || r.url}</div>
             </li>
           ))}
