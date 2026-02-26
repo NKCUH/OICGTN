@@ -1,5 +1,11 @@
 // import Swiper core and required modules
-import {Autoplay, Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import {
+  Autoplay,
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+} from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -15,10 +21,12 @@ import "swiper/css/scrollbar";
 
 export default () => {
   return (
-    <Swiper className="w-full"
-    style={{
-        '--swiper-navigation-color': 'rgba(255, 255, 255, .4)',
-        '--swiper-pagination-color': '#fff',
+    <Swiper
+      className="w-full"
+      style={{
+        "--swiper-navigation-color": "rgba(255, 255, 255, .4)",
+        "--swiper-pagination-color": "#fff",
+        height: "410px",
       }}
       // install Swiper modules
       modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
@@ -29,13 +37,19 @@ export default () => {
       }}
       spaceBetween={50}
       slidesPerView={1}
-      navigation={{hide: true}}
+      navigation={{ hide: true }}
       pagination={{ clickable: true }}
-      scrollbar={{enabled: false}}
+      scrollbar={{ enabled: false }}
     >
-  <SwiperSlide><img src={slide1} className=" h-full w-full" alt="" /></SwiperSlide>
-  <SwiperSlide><img src={slide2} className=" h-full w-full" alt="" /></SwiperSlide>
-  <SwiperSlide><img src={slide3} className="h-full w-full" alt="" /></SwiperSlide>
+      <SwiperSlide>
+        <img src={slide1} className="w-full h-full object-fill block" alt="" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={slide2} className="w-full h-full object-fill block" alt="" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={slide3} className="w-full h-full object-fill block" alt="" />
+      </SwiperSlide>
     </Swiper>
   );
 };
