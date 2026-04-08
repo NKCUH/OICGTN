@@ -97,7 +97,7 @@ const SerialForm = ({type}) => {
           }}
         >
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Title of the Journal</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Title of the Journal</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -109,7 +109,7 @@ const SerialForm = ({type}) => {
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Subsidiary Title</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Subsidiary Title</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -122,7 +122,7 @@ const SerialForm = ({type}) => {
           </Form.Group>
 
 <Form.Group as={Row} className="mb-3 align-items-start">
-            <Form.Label column sm={3} className="fw-bold">
+            <Form.Label column sm={3} className="fw-bold text-start">
               Medium Designation
             </Form.Label>
             <Col sm={9}>
@@ -174,7 +174,7 @@ const SerialForm = ({type}) => {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3 align-items-center">
-            <Form.Label column sm={3} className="fw-bold">
+            <Form.Label column sm={3} className="fw-bold text-start">
               Edition
             </Form.Label>
             <Col sm={9}>
@@ -203,7 +203,7 @@ const SerialForm = ({type}) => {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Year</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Year</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -216,7 +216,7 @@ const SerialForm = ({type}) => {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Place</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Place</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -228,7 +228,7 @@ const SerialForm = ({type}) => {
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Date of Publication</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Date of Publication</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -239,10 +239,9 @@ const SerialForm = ({type}) => {
               />
             </Col>
           </Form.Group>
-          </Row>
 
           <Form.Group as={Row} className="mb-3 align-items-center">
-            <Form.Label column sm={3} className="fw-bold">
+            <Form.Label column sm={3} className="fw-bold text-start">
               Publisher
             </Form.Label>
             <Col sm={9}>
@@ -267,7 +266,7 @@ const SerialForm = ({type}) => {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3 align-items-start">
-            <Form.Label column sm={3} className="fw-bold">
+            <Form.Label column sm={3} className="fw-bold text-start">
               Numeration
             </Form.Label>
             <Col sm={9}>
@@ -325,7 +324,7 @@ const SerialForm = ({type}) => {
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Date of Citation</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Date of Citation</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -346,10 +345,9 @@ const SerialForm = ({type}) => {
                 placeholder="Enter Link of the E-Journal"
               />
             </Form.Group>: null} */}
-          </Row>
 
           <Form.Group as={Row} className="mb-3 align-items-center">
-            <Form.Label column sm={3} className="fw-bold">
+            <Form.Label column sm={3} className="fw-bold text-start">
               Standard Identifier
             </Form.Label>
             <Col sm={9}>
@@ -376,7 +374,7 @@ const SerialForm = ({type}) => {
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3 align-items-center">
-            <Form.Label column sm={3} className="fw-bold">
+              <Form.Label column sm={3} className="fw-bold text-start">
               Availibility and Access
             </Form.Label>
             <Col sm={9}>
@@ -405,7 +403,7 @@ const SerialForm = ({type}) => {
           </Form.Group>
           {type ? null : (
             <Form.Group as={Row} className="mb-3 align-items-center">
-              <Form.Label column sm={3} className="fw-bold">
+              <Form.Label column sm={3} className="fw-bold text-start">
                 Location
               </Form.Label>
               <Col sm={9}>

@@ -188,7 +188,7 @@ const BooksForm = ({ type }) => {
           className="max-w-3xl mx-auto"
         >
           <Form.Group as={Row} className="mb-3 align-items-start">
-            <Form.Label column sm={3} className="fw-bold">
+            <Form.Label column sm={3} className="fw-bold text-start">
               Name of Creator(s)
             </Form.Label>
             <Col sm={9}>
@@ -254,7 +254,7 @@ const BooksForm = ({ type }) => {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3 align-items-center" controlId="formTitle">
-            <Form.Label column sm={3} className="fw-bold">
+            <Form.Label column sm={3} className="fw-bold text-start">
               Title
             </Form.Label>
             <Col sm={9}>
@@ -268,7 +268,7 @@ const BooksForm = ({ type }) => {
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3 align-items-center" controlId="formYear">
-            <Form.Label column sm={3} className="fw-bold">
+            <Form.Label column sm={3} className="fw-bold text-start">
               Date of Publication (Year)
             </Form.Label>
             <Col sm={9}>
@@ -282,7 +282,7 @@ const BooksForm = ({ type }) => {
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3 align-items-center" controlId="formEdition">
-            <Form.Label column sm={3} className="fw-bold">
+            <Form.Label column sm={3} className="fw-bold text-start">
               Edition
             </Form.Label>
             <Col sm={9}>
@@ -308,7 +308,7 @@ const BooksForm = ({ type }) => {
             </Form.Group>
           </Row> */}
           <Form.Group as={Row} className="my-3 align-items-center" controlId="formPlace">
-            <Form.Label column sm={3} className="fw-bold">
+            <Form.Label column sm={3} className="fw-bold text-start">
               Place
             </Form.Label>
             <Col sm={9}>
@@ -330,7 +330,7 @@ const BooksForm = ({ type }) => {
                 controlId="formPublisher"
               >
                 {index === 0 ? (
-                  <Form.Label column sm={3} className="fw-bold">
+                  <Form.Label column sm={3} className="fw-bold text-start">
                     Publisher
                   </Form.Label>
                 ) : (
@@ -367,7 +367,7 @@ const BooksForm = ({ type }) => {
           })}
           {type === "e" && (
             <Form.Group as={Row} className="mb-3 align-items-center" controlId="formURL">
-              <Form.Label column sm={3} className="fw-bold">
+              <Form.Label column sm={3} className="fw-bold text-start">
                 URL
               </Form.Label>
               <Col sm={9}>

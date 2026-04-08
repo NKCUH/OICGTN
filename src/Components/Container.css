@@ -2,12 +2,15 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   margin-top: 1.25rem; /* 20px -> 1.25rem */
 }
 
 .cit-container .page-title {
+  display: block;
+  width: 100%;
+  text-align: left;
   font-size: clamp(1.5rem, 5vw, 2.5rem); /* Responsive font size */
   font-weight: 600;
   font-family: monospace;
