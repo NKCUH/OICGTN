@@ -187,73 +187,77 @@ const BooksForm = ({ type }) => {
           }}
           className="max-w-3xl mx-auto"
         >
-          <Row className="mb-3">
-            <Form.Label>
-              <b>Name of Creator(s)</b>
+          <Form.Group as={Row} className="mb-3 align-items-start">
+            <Form.Label column sm={3} className="fw-bold">
+              Name of Creator(s)
             </Form.Label>
-            {/* <span className="text-warning">* Description of the heading.</span> */}
-            {formFields.map((item, index) => {
-              return (
-                <Row key={index} className="mt-2">
-                  <Form.Group as={Col} md={3} controlId="formLname">
-                    <Form.Select
-                      value={creatorTypes[index] || ""}
-                      onChange={(event) =>
-                        handleCreatorTypeChange(event, index)
-                      }
-                    >
-                      <option>---Select Type ---</option>
-                      <option>Author</option>
-                      <option>Editor</option>
-                      <option>Translator</option>
-                      <option>Organisation</option>
-                    </Form.Select>
-                  </Form.Group>
-                  <Form.Group as={Col} md={4} controlId="formFname">
-                    <Form.Control
-                      onChange={(event) => handleFormChange(event, index)}
-                      value={item[0]}
-                      name="firstName"
-                      type="text"
-                      placeholder="Enter First Name"
-                    />
-                  </Form.Group>
-                  <Form.Group as={Col} md={4} controlId="formLname">
-                    <Form.Control
-                      onChange={(event) => handleFormChange(event, index)}
-                      value={item[1]}
-                      name="lastName"
-                      type="text"
-                      placeholder="Enter Last Name"
-                    />
-                  </Form.Group>
-                  {formFields.length !== 1 ? (
-                    <Col className="col-sm-1">
-                      <Button
-                        className="removebutton md:!mt-0 !mt-2"
-                        onClick={() => removeCreatorField(index)}
+            <Col sm={9}>
+              {/* <span className="text-warning">* Description of the heading.</span> */}
+              {formFields.map((item, index) => {
+                return (
+                  <Row key={index} className="mt-2 align-items-center">
+                    <Form.Group as={Col} md={3} controlId="formLname">
+                      <Form.Select
+                        value={creatorTypes[index] || ""}
+                        onChange={(event) =>
+                          handleCreatorTypeChange(event, index)
+                        }
                       >
-                        Remove
-                      </Button>
-                    </Col>
-                  ) : (
-                    <></>
-                  )}
-                </Row>
-              );
-            })}
-            <Button
-              variant="link"
-              className="ps-0 text-decoration-none"
-              onClick={addCreatorField}
-            >
-              Add another Creator
-            </Button>
-          </Row>
+                        <option>---Select Type ---</option>
+                        <option>Author</option>
+                        <option>Editor</option>
+                        <option>Translator</option>
+                        <option>Organisation</option>
+                      </Form.Select>
+                    </Form.Group>
+                    <Form.Group as={Col} md={4} controlId="formFname">
+                      <Form.Control
+                        onChange={(event) => handleFormChange(event, index)}
+                        value={item[0]}
+                        name="firstName"
+                        type="text"
+                        placeholder="Enter First Name"
+                      />
+                    </Form.Group>
+                    <Form.Group as={Col} md={4} controlId="formLname">
+                      <Form.Control
+                        onChange={(event) => handleFormChange(event, index)}
+                        value={item[1]}
+                        name="lastName"
+                        type="text"
+                        placeholder="Enter Last Name"
+                      />
+                    </Form.Group>
+                    {formFields.length !== 1 ? (
+                      <Col className="col-sm-1">
+                        <Button
+                          className="removebutton md:!mt-0 !mt-2"
+                          onClick={() => removeCreatorField(index)}
+                        >
+                          Remove
+                        </Button>
+                      </Col>
+                    ) : (
+                      <></>
+                    )}
+                  </Row>
+                );
+              })}
+              <Button
+                variant="link"
+                className="ps-0 text-decoration-none"
+                onClick={addCreatorField}
+              >
+                Add another Creator
+              </Button>
+            </Col>
+          </Form.Group>
 
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formTitle">
-              <Form.Label><b>Title</b></Form.Label>
+          <Form.Group as={Row} className="mb-3 align-items-center" controlId="formTitle">
+            <Form.Label column sm={3} className="fw-bold">
+              Title
+            </Form.Label>
+            <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 value={booksCitation.titleOfTheItem}
@@ -261,11 +265,13 @@ const BooksForm = ({ type }) => {
                 type="text"
                 placeholder="Enter Title"
               />
-            </Form.Group>
-          </Row>
-          <Row className="mb-3">
-            <Form.Group as={Col} md={12} controlId="formYear">
-              <Form.Label><b>Date of Publication (Year)</b></Form.Label>
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} className="mb-3 align-items-center" controlId="formYear">
+            <Form.Label column sm={3} className="fw-bold">
+              Date of Publication (Year)
+            </Form.Label>
+            <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 value={booksCitation.year}
@@ -273,11 +279,13 @@ const BooksForm = ({ type }) => {
                 type="text"
                 placeholder="Enter Year"
               />
-            </Form.Group>
-          </Row>
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formEdition">
-              <Form.Label><b>Edition</b></Form.Label>
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} className="mb-3 align-items-center" controlId="formEdition">
+            <Form.Label column sm={3} className="fw-bold">
+              Edition
+            </Form.Label>
+            <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 value={booksCitation.edition}
@@ -285,8 +293,8 @@ const BooksForm = ({ type }) => {
                 type="text"
                 placeholder="Enter Edition"
               />
-            </Form.Group>
-          </Row>
+            </Col>
+          </Form.Group>
           {/* <Row className="my-3">
             <Form.Group as={Col} controlId="formCreatore">
               <Form.Label>Subsidiary Creator</Form.Label>
@@ -299,9 +307,11 @@ const BooksForm = ({ type }) => {
               />
             </Form.Group>
           </Row> */}
-          <Row className="my-3">
-            <Form.Group as={Col} md={12} controlId="formPlace">
-              <Form.Label><b>Place</b></Form.Label>
+          <Form.Group as={Row} className="my-3 align-items-center" controlId="formPlace">
+            <Form.Label column sm={3} className="fw-bold">
+              Place
+            </Form.Label>
+            <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 value={booksCitation.place}
@@ -309,51 +319,58 @@ const BooksForm = ({ type }) => {
                 type="text"
                 placeholder="Enter Place"
               />
-            </Form.Group>
-            <Row className="mb-3">
-              <Form.Label><b>Publisher</b></Form.Label>
-              {publisher.map((item, index) => {
-                return (
-                  <Row key={index} className="mt-1">
-                    <Form.Group as={Col} md={12} controlId="formPublisher">
-                      <Form.Control
-                        onChange={(event) =>
-                          handleInputChange(
-                            event,
-                            setPublisher,
-                            publisher,
-                            index,
-                          )
-                        }
-                        value={item}
-                        name="publisher"
-                        type="text"
-                        placeholder="Enter Publisher"
-                      />
-                    </Form.Group>
-
-                    {publisher.length !== 1 ? (
-                      <Col className="col-sm-6">
-                        <Button
-                          className="removebutton"
-                          onClick={() =>
-                            removeField(setPublisher, publisher, index)
-                          }
-                        >
-                          Remove
-                        </Button>
-                      </Col>
-                    ) : null}
-                  </Row>
-                );
-              })}
-            </Row>
-          </Row>
-          
+            </Col>
+          </Form.Group>
+          {publisher.map((item, index) => {
+            return (
+              <Form.Group
+                as={Row}
+                key={index}
+                className="mt-1 align-items-center"
+                controlId="formPublisher"
+              >
+                {index === 0 ? (
+                  <Form.Label column sm={3} className="fw-bold">
+                    Publisher
+                  </Form.Label>
+                ) : (
+                  <Col sm={3}></Col>
+                )}
+                <Col sm={6}>
+                  <Form.Control
+                    onChange={(event) =>
+                      handleInputChange(
+                        event,
+                        setPublisher,
+                        publisher,
+                        index,
+                      )
+                    }
+                    value={item}
+                    name="publisher"
+                    type="text"
+                    placeholder="Enter Publisher"
+                  />
+                </Col>
+                {publisher.length !== 1 ? (
+                  <Col sm={3}>
+                    <Button
+                      className="removebutton"
+                      onClick={() => removeField(setPublisher, publisher, index)}
+                    >
+                      Remove
+                    </Button>
+                  </Col>
+                ) : null}
+              </Form.Group>
+            );
+          })}
           {type === "e" && (
-            <Row className="mb-3">
-              <Form.Group as={Col} controlId="formURL">
-                <Form.Label><b>URL</b></Form.Label>
+            <Form.Group as={Row} className="mb-3 align-items-center" controlId="formURL">
+              <Form.Label column sm={3} className="fw-bold">
+                URL
+              </Form.Label>
+              <Col sm={9}>
                 <Form.Control
                   onChange={(e) => onChanging(e)}
                   value={booksCitation.url}
@@ -361,8 +378,8 @@ const BooksForm = ({ type }) => {
                   type="text"
                   placeholder="Enter URL"
                 />
-              </Form.Group>
-            </Row>
+              </Col>
+            </Form.Group>
           )}
 
           <Row className="mb-3">

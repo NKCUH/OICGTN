@@ -212,75 +212,71 @@ const SerialContributionForm = ({ type }) => {
       <ToastContainer />
       <div className="serial">
         <Form onSubmit={handleSubmit}>
-          <Row className="mb-3">
-            <Form.Label>
-              <b>Name of Creator(s)</b>
+          <Form.Group as={Row} className="mb-3 align-items-start">
+            <Form.Label column sm={3} className="fw-bold">
+              Name of Creator(s)
             </Form.Label>
-            {formFields.map((item, index) => {
-              return (
-                <Row key={index} className="mt-2">
-                  <Form.Group as={Col} controlId="formLname">
-                    {/* <Form.Label>Last Name</Form.Label> */}
-                    <Form.Select
-                      value={creatorTypes[index] || ""}
-                      onChange={(event) =>
-                        handleCreatorTypeChange(event, index)
-                      }
-                    >
-                      <option value>Choose...</option>
-                      <option>Author</option>
-
-                      <option>Editor</option>
-
-                      <option>Translator</option>
-
-                      <option>Organisation</option>
-                    </Form.Select>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formFname">
-                    {/* <Form.Label>Last Name</Form.Label> */}
-                    <Form.Control
-                      onChange={(event) => handleFormChange(event, index)}
-                      value={item[1]}
-                      name="lastName"
-                      type="text"
-                      placeholder="Enter Last Name"
-                    />
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formFname">
-                    {/* <Form.Label>First Name</Form.Label> */}
-                    <Form.Control
-                      onChange={(event) => handleFormChange(event, index)}
-                      value={item[0]}
-                      name="firstName"
-                      type="text"
-                      placeholder="Enter First Name"
-                    />
-                  </Form.Group>
-
-                  {formFields.length !== 1 ? (
-                    <div as={Col} className="col-sm-1">
-                      <Button
-                        className="removebutton md:!mt-0 !mt-2"
-                        onClick={() => removeCreatorField(index)}
+            <Col sm={9}>
+              {formFields.map((item, index) => {
+                return (
+                  <Row key={index} className="mt-2 align-items-center">
+                    <Form.Group as={Col} controlId="formLname">
+                      <Form.Select
+                        value={creatorTypes[index] || ""}
+                        onChange={(event) =>
+                          handleCreatorTypeChange(event, index)
+                        }
                       >
-                        Remove
-                      </Button>
-                    </div>
-                  ) : (
-                    <></>
-                  )}
-                </Row>
-              );
-            })}
-            <Button
-              variant="link"
-              className="ps-0 text-decoration-none"
-              onClick={addCreatorField}
-            >
-              Add another Creator
-            </Button>
-          </Row>
+                        <option value>Choose...</option>
+                        <option>Author</option>
+                        <option>Editor</option>
+                        <option>Translator</option>
+                        <option>Organisation</option>
+                      </Form.Select>
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formFname">
+                      <Form.Control
+                        onChange={(event) => handleFormChange(event, index)}
+                        value={item[1]}
+                        name="lastName"
+                        type="text"
+                        placeholder="Enter Last Name"
+                      />
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formFname">
+                      <Form.Control
+                        onChange={(event) => handleFormChange(event, index)}
+                        value={item[0]}
+                        name="firstName"
+                        type="text"
+                        placeholder="Enter First Name"
+                      />
+                    </Form.Group>
+
+                    {formFields.length !== 1 ? (
+                      <div as={Col} className="col-sm-1">
+                        <Button
+                          className="removebutton md:!mt-0 !mt-2"
+                          onClick={() => removeCreatorField(index)}
+                        >
+                          Remove
+                        </Button>
+                      </div>
+                    ) : (
+                      <></>
+                    )}
+                  </Row>
+                );
+              })}
+              <Button
+                variant="link"
+                className="ps-0 text-decoration-none"
+                onClick={addCreatorField}
+              >
+                Add another Creator
+              </Button>
+            </Col>
+          </Form.Group>
 
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formContribution">

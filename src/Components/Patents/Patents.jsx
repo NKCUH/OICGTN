@@ -167,77 +167,77 @@ const PatentsForm = () => {
             setResult(true);
           }}
         >
-          <Row className="mb-3">
-            <Form.Label><b>Name of Creator(s)</b></Form.Label>
-            {/* <p></p> */}
-            {formFields.map((item, index) => {
-              return (
-                <Row key={index} className="mb-3">
-                  <Form.Group as={Col} controlId="formLname">
-                    <Form.Select
-                      value={creatorTypes[index] || ""}
-                      onChange={(event) =>
-                        handleCreatorTypeChange(event, index)
-                      }
-                    >
-                      <option>---Select Type ---</option>
-                      <option>Author</option>
-                      <option>Editor</option>
-                      <option>Reviewer</option>
-                      <option>Translator</option>
-                    </Form.Select>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridEmail">
-                    {/* <Form.Label>First Name</Form.Label> */}
-                    <Form.Control
-                      onChange={(event) => handleFormChange(event, index)}
-                      value={item[0]}
-                      name="firstName"
-                      type="text"
-                      placeholder="Enter First Name"
-                    />
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formGridEmail">
-                    {/* <Form.Label>Last Name</Form.Label> */}
-                    <Form.Control
-                      onChange={(event) => handleFormChange(event, index)}
-                      value={item[1]}
-                      name="lastName"
-                      type="text"
-                      placeholder="Enter Last Name"
-                    />
-                  </Form.Group>
-                  {formFields.length !== 1 ? (
-                    <div as={Col} className="col-sm-1">
-                      <Button
-                        className="removebutton md:!mt-0 !mt-2"
-                        onClick={() => removeCreatorField(index)}
+          <Form.Group as={Row} className="mb-3 align-items-start">
+            <Form.Label column sm={3} className="fw-bold">
+              Name of Creator(s)
+            </Form.Label>
+            <Col sm={9}>
+              {formFields.map((item, index) => {
+                return (
+                  <Row key={index} className="mb-3 align-items-center">
+                    <Form.Group as={Col} controlId="formLname">
+                      <Form.Select
+                        value={creatorTypes[index] || ""}
+                        onChange={(event) =>
+                          handleCreatorTypeChange(event, index)
+                        }
                       >
-                        Remove
-                      </Button>
-                    </div>
-                  ) : (
-                    <></>
-                  )}
-                  {formFields.length - 1 === index && (
-                    <div as={Col} className="col-sm-1">
-                      <Button
-                        variant="link"
-                        className="ps-0 text-decoration-none"
-                        onClick={addCreatorField}
-                      >
-                        Add another Creator
-                      </Button>
-                    </div>
-                  )}
-                  {/* <button onClick={removeOne}>Remove</button> */}
-                </Row>
-              );
-            })}
-          </Row>
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Label><b>Patent application country</b></Form.Label>
+                        <option>---Select Type ---</option>
+                        <option>Author</option>
+                        <option>Editor</option>
+                        <option>Reviewer</option>
+                        <option>Translator</option>
+                      </Form.Select>
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formGridEmail">
+                      <Form.Control
+                        onChange={(event) => handleFormChange(event, index)}
+                        value={item[0]}
+                        name="firstName"
+                        type="text"
+                        placeholder="Enter First Name"
+                      />
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formGridEmail">
+                      <Form.Control
+                        onChange={(event) => handleFormChange(event, index)}
+                        value={item[1]}
+                        name="lastName"
+                        type="text"
+                        placeholder="Enter Last Name"
+                      />
+                    </Form.Group>
+                    {formFields.length !== 1 ? (
+                      <div as={Col} className="col-sm-1">
+                        <Button
+                          className="removebutton md:!mt-0 !mt-2"
+                          onClick={() => removeCreatorField(index)}
+                        >
+                          Remove
+                        </Button>
+                      </div>
+                    ) : (
+                      <></>
+                    )}
+                    {formFields.length - 1 === index && (
+                      <div as={Col} className="col-sm-1">
+                        <Button
+                          variant="link"
+                          className="ps-0 text-decoration-none"
+                          onClick={addCreatorField}
+                        >
+                          Add another Creator
+                        </Button>
+                      </div>
+                    )}
+                  </Row>
+                );
+              })}
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm={3}><b>Patent application country</b></Form.Label>
+            <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 value={patentsCitation.patientApplicationCountry}
@@ -245,11 +245,11 @@ const PatentsForm = () => {
                 type="text"
                 placeholder="Enter Country"
               />
-            </Form.Group>
-          </Row>
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Label><b>Title</b></Form.Label>
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm={3}><b>Title</b></Form.Label>
+            <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 value={patentsCitation.titleOfTheInformationSource}
@@ -257,12 +257,12 @@ const PatentsForm = () => {
                 type="text"
                 placeholder="Enter Title"
               />
-            </Form.Group>
-          </Row>
+            </Col>
+          </Form.Group>
 
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Label><b>Date</b></Form.Label>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm={3}><b>Date</b></Form.Label>
+            <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 value={patentsCitation.dateOfApplication}
@@ -270,12 +270,12 @@ const PatentsForm = () => {
                 type="text"
                 placeholder="Enter Date"
               />
-            </Form.Group>
-          </Row>
+            </Col>
+          </Form.Group>
 
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Label><b>Patent Number</b></Form.Label>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm={3}><b>Patent Number</b></Form.Label>
+            <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 value={patentsCitation.patentNumber}
@@ -283,8 +283,8 @@ const PatentsForm = () => {
                 type="text"
                 placeholder="Enter Patent Number"
               />
-            </Form.Group>
-          </Row>
+            </Col>
+          </Form.Group>
           <div>
             <center>
               <Button variant="primary" type="submit">

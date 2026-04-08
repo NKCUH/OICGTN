@@ -96,9 +96,9 @@ const SerialForm = ({type}) => {
             setResult(true);
           }}
         >
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Label><b>Title of the Journal</b></Form.Label>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm={3}><b>Title of the Journal</b></Form.Label>
+            <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 value={serialCitation.titleOfTheSerial}
@@ -106,11 +106,11 @@ const SerialForm = ({type}) => {
                 type="text"
                 placeholder="Enter title of the Journal"
               />
-            </Form.Group>
-          </Row>
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Label><b>Subsidiary Title</b></Form.Label>
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm={3}><b>Subsidiary Title</b></Form.Label>
+            <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 value={serialCitation.subsidiaryTitles}
@@ -118,89 +118,93 @@ const SerialForm = ({type}) => {
                 type="text"
                 placeholder="Enter title of the subsidiary"
               />
-            </Form.Group>
-          </Row>
+            </Col>
+          </Form.Group>
 
-          <Row className="mb-3">
-            <Form.Label><b>Medium Designation</b></Form.Label>
-            {medium.map((item, index) => {
-              return (
-                <Row key={index} className="mt-2">
-                  <Form.Group as={Col} controlId="formGridState">
-                    <Form.Select defaultValue="Choose...">
-                      <option>Choose...</option>
-                      <option>Online</option>
-                      <option>Database Online</option>
-                      
-                    </Form.Select>
-                  </Form.Group>
+<Form.Group as={Row} className="mb-3 align-items-start">
+            <Form.Label column sm={3} className="fw-bold">
+              Medium Designation
+            </Form.Label>
+            <Col sm={9}>
+              {medium.map((item, index) => {
+                return (
+                  <Row key={index} className="mt-2 align-items-center">
+                    <Form.Group as={Col} controlId="formGridState">
+                      <Form.Select defaultValue="Choose...">
+                        <option>Choose...</option>
+                        <option>Online</option>
+                        <option>Database Online</option>
+                      </Form.Select>
+                    </Form.Group>
 
-                  <Form.Group as={Col} controlId="formGridEmail">
-                    <Form.Control
-                      onChange={(event) => handleInputChange(event, setMedium, medium, index)}
-                      value={item}
-                      name="mediumD"
-                      type="text"
-                      placeholder="Enter Medium Designation"
-                    />
-                  </Form.Group>
+                    <Form.Group as={Col} controlId="formGridEmail">
+                      <Form.Control
+                        onChange={(event) => handleInputChange(event, setMedium, medium, index)}
+                        value={item}
+                        name="mediumD"
+                        type="text"
+                        placeholder="Enter Medium Designation"
+                      />
+                    </Form.Group>
 
-                  {medium.length !== 1 ? (
-                    <div as={Col} className="col-sm-1">
-                      <Button
-                        className="removebutton md:!mt-0 !mt-2"
-                        onClick={() => removeField(setMedium, medium, index)}
-                      >
-                        Remove
-                      </Button>
-                    </div>
-                  ) : (
-                    <></>
-                  )}
+                    {medium.length !== 1 ? (
+                      <div as={Col} className="col-sm-1">
+                        <Button
+                          className="removebutton md:!mt-0 !mt-2"
+                          onClick={() => removeField(setMedium, medium, index)}
+                        >
+                          Remove
+                        </Button>
+                      </div>
+                    ) : (
+                      <></>
+                    )}
 
-                  {medium.length - 1 === index && (
-                    <div as={Col} className="col-sm-1">
-                      <Button className="addbutton md:!mt-0 !mt-2 " onClick={()=>addField(setMedium, medium, "")}>
-                        ADD
-                      </Button>
-                    </div>
-                  )}
-                </Row>
-              );
-            })}
-          </Row>
+                    {medium.length - 1 === index && (
+                      <div as={Col} className="col-sm-1">
+                        <Button className="addbutton md:!mt-0 !mt-2 " onClick={()=>addField(setMedium, medium, "")}> 
+                          ADD
+                        </Button>
+                      </div>
+                    )}
+                  </Row>
+                );
+              })}
+            </Col>
+          </Form.Group>
 
-          <Row className="mb-3">
-            <Form.Label><b>Edition</b></Form.Label>
-            <Form.Group as={Col} controlId="formGridState">
-              {/* <Form.Label>Edition</Form.Label> */}
-              <Form.Select
-                // onChange={(e) => onChanging(e)}
-                // value={serialCitation.edition}
-                // name="edition"
-                defaultValue="Choose..."
-              >
-                <option>Choose...</option>
-                <option>Edition</option>
-                <option>Version</option>
-                <option>Revised Edition</option>
-              </Form.Select>
-            </Form.Group>
-            <Form.Group as={Col} controlId="formGridEmail">
-              {/* <Form.Label>Medium</Form.Label> */}
-              <Form.Control
-                onChange={(e) => onChanging(e)}
-                value={serialCitation.edition}
-                name="edition"
-                type="text"
-                placeholder="Enter Edition"
-              />
-            </Form.Group>
-          </Row>
+          <Form.Group as={Row} className="mb-3 align-items-center">
+            <Form.Label column sm={3} className="fw-bold">
+              Edition
+            </Form.Label>
+            <Col sm={9}>
+              <Row className="g-2 align-items-center">
+                <Form.Group as={Col} controlId="formGridState">
+                  <Form.Select
+                    defaultValue="Choose..."
+                  >
+                    <option>Choose...</option>
+                    <option>Edition</option>
+                    <option>Version</option>
+                    <option>Revised Edition</option>
+                  </Form.Select>
+                </Form.Group>
+                <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Control
+                    onChange={(e) => onChanging(e)}
+                    value={serialCitation.edition}
+                    name="edition"
+                    type="text"
+                    placeholder="Enter Edition"
+                  />
+                </Form.Group>
+              </Row>
+            </Col>
+          </Form.Group>
 
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Label><b>Year</b></Form.Label>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm={3}><b>Year</b></Form.Label>
+            <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 value={serialCitation.year}
@@ -208,10 +212,12 @@ const SerialForm = ({type}) => {
                 type="text"
                 placeholder="Enter Year"
               />
-            </Form.Group>
+            </Col>
+          </Form.Group>
 
-            <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Label><b>Place</b></Form.Label>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm={3}><b>Place</b></Form.Label>
+            <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 value={serialCitation.place}
@@ -219,9 +225,11 @@ const SerialForm = ({type}) => {
                 type="text"
                 placeholder="Enter Place"
               />
-            </Form.Group>
-            <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Label><b>Date of Publication</b></Form.Label>
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm={3}><b>Date of Publication</b></Form.Label>
+            <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 value={serialCitation.dateOfPublication}
@@ -229,90 +237,96 @@ const SerialForm = ({type}) => {
                 type="text"
                 placeholder="Enter Place"
               />
-            </Form.Group>
+            </Col>
+          </Form.Group>
           </Row>
 
-          <Row className="mb-3">
-            <Form.Label><b>Publisher</b></Form.Label>
-            <Form.Group as={Col} controlId="formGridState">
-              <Form.Select
-                defaultValue="Choose..."
-              >
-                <option>Choose...</option>
-                <option>Publisher</option>
-                            
-                                             
-              </Form.Select>
-            </Form.Group>
-            <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Control
-                onChange={(e) => onChanging(e)}
-                name="publisher"
-                value={serialCitation.publisher}
-                type="text"
-                placeholder="Enter Publisher"
-              />
-            </Form.Group>
-          </Row>
+          <Form.Group as={Row} className="mb-3 align-items-center">
+            <Form.Label column sm={3} className="fw-bold">
+              Publisher
+            </Form.Label>
+            <Col sm={9}>
+              <Row className="g-2 align-items-center">
+                <Form.Group as={Col} md={4} controlId="formGridState">
+                  <Form.Select defaultValue="Choose...">
+                    <option>Choose...</option>
+                    <option>Publisher</option>
+                  </Form.Select>
+                </Form.Group>
+                <Form.Group as={Col} md={8} controlId="formGridEmail">
+                  <Form.Control
+                    onChange={(e) => onChanging(e)}
+                    name="publisher"
+                    value={serialCitation.publisher}
+                    type="text"
+                    placeholder="Enter Publisher"
+                  />
+                </Form.Group>
+              </Row>
+            </Col>
+          </Form.Group>
 
-          <Row className="mb-3">
-            <Form.Label><b>Numeration</b></Form.Label>
-            {numeration.map((item, index) => {
-              return (
-                <Row key={index} className="mt-2">
-                  <Form.Group as={Col} controlId="formGridState">
-                    <Form.Select
-                      value={item.type}
-                      onChange={(event) => handleTypeChange(event, index)}
-                    >
-                      <option value="">Choose...</option>
-                      <option>Volume</option>
-                      <option>Number</option>
-                      <option>Issue</option>
-                                                                                                                                                          
-                    </Form.Select>
-                  </Form.Group>
-                  <Form.Group as={Col} controlId="formRange">
-                    <Form.Control
-                      value={item.value}
-                      onChange={(event) => handleValueChange(event, index)}
-                      type="text"
-                      placeholder="Enter Numeration "
-                    />
-                  </Form.Group>
-
-                  {numeration.length !== 1 ? (
-                    <div as={Col} className="col-sm-1">
-                      <Button
-                        className="removebutton md:!mt-0 !mt-2"
-                        onClick={() =>
-                          removeField(setNumeration, numeration, index)
-                        }
+          <Form.Group as={Row} className="mb-3 align-items-start">
+            <Form.Label column sm={3} className="fw-bold">
+              Numeration
+            </Form.Label>
+            <Col sm={9}>
+              {numeration.map((item, index) => {
+                return (
+                  <Row key={index} className="mt-2 align-items-center">
+                    <Form.Group as={Col} controlId="formGridState">
+                      <Form.Select
+                        value={item.type}
+                        onChange={(event) => handleTypeChange(event, index)}
                       >
-                        Remove
-                      </Button>
-                    </div>
-                  ) : (
-                    <></>
-                  )}
+                        <option value="">Choose...</option>
+                        <option>Volume</option>
+                        <option>Number</option>
+                        <option>Issue</option>
+                      </Form.Select>
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formRange">
+                      <Form.Control
+                        value={item.value}
+                        onChange={(event) => handleValueChange(event, index)}
+                        type="text"
+                        placeholder="Enter Numeration "
+                      />
+                    </Form.Group>
 
-                  {numeration.length - 1 === index && (
-                    <div as={Col} className="col-sm-1">
-                      <Button
-                        className="addbutton md:!mt-0 !mt-2 "
-                        onClick={() => addField(setNumeration, numeration, {type: "", value: ""})}
-                      >
-                        ADD
-                      </Button>
-                    </div>
-                  )}
-                </Row>
-              );
-            })}
-          </Row>
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Label><b>Date of Citation</b></Form.Label>
+                    {numeration.length !== 1 ? (
+                      <div as={Col} className="col-sm-1">
+                        <Button
+                          className="removebutton md:!mt-0 !mt-2"
+                          onClick={() =>
+                            removeField(setNumeration, numeration, index)
+                          }
+                        >
+                          Remove
+                        </Button>
+                      </div>
+                    ) : (
+                      <></>
+                    )}
+
+                    {numeration.length - 1 === index && (
+                      <div as={Col} className="col-sm-1">
+                        <Button
+                          className="addbutton md:!mt-0 !mt-2 "
+                          onClick={() => addField(setNumeration, numeration, {type: "", value: ""})}
+                        >
+                          ADD
+                        </Button>
+                      </div>
+                    )}
+                  </Row>
+                );
+              })}
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm={3}><b>Date of Citation</b></Form.Label>
+            <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 name="dateOfCitation"
@@ -320,7 +334,8 @@ const SerialForm = ({type}) => {
                 type="text"
                 placeholder="Enter Place"
               />
-            </Form.Group>
+            </Col>
+          </Form.Group>
             {/* {type?<Form.Group as={Col} controlId="formLink">
               <Form.Label>Link</Form.Label>
               <Form.Control
@@ -333,68 +348,79 @@ const SerialForm = ({type}) => {
             </Form.Group>: null} */}
           </Row>
 
-          <Row className="mb-3">
-          <Form.Label><b>Standard Identifier</b></Form.Label>
-            <Form.Group as={Col} controlId="formGridState">
-              <Form.Select
-                // onChange={(e) => onChanging(e)}
-                // name="standardIdentifier"
-                // value={serialCitation.standardIdentifier}
-                defaultValue="Choose..."
-              >
-                <option>Choose...</option>
-                <option>ISSN</option>
-                <option>eISSN</option>
-              </Form.Select>
+          <Form.Group as={Row} className="mb-3 align-items-center">
+            <Form.Label column sm={3} className="fw-bold">
+              Standard Identifier
+            </Form.Label>
+            <Col sm={9}>
+              <Row className="g-2 align-items-center">
+                <Form.Group as={Col} controlId="formGridState">
+                  <Form.Select
+                    defaultValue="Choose..."
+                  >
+                    <option>Choose...</option>
+                    <option>ISSN</option>
+                    <option>eISSN</option>
+                  </Form.Select>
+                </Form.Group>
+                <Form.Group as={Col} className="mb-3" controlId="formGridAddress1">
+                  <Form.Control
+                    onChange={(e) => onChanging(e)}
+                    name="standardIdentifier"
+                    value={serialCitation.standardIdentifier}
+                    type="text"
+                    placeholder="Enter the Standard Identifier"
+                  />
+                </Form.Group>
+              </Row>
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} className="mb-3 align-items-center">
+            <Form.Label column sm={3} className="fw-bold">
+              Availibility and Access
+            </Form.Label>
+            <Col sm={9}>
+              <Row className="g-2 align-items-center">
+                <Form.Group as={Col} controlId="formGridState">
+                  <Form.Select
+                    defaultValue="Choose..."
+                  >
+                    <option>Choose...</option>
+                    <option>DOI</option>
+                    <option>URI</option>
+                    <option>URL</option>
+                  </Form.Select>
+                </Form.Group>
+                <Form.Group as={Col} className="mb-3" controlId="formGridAddress1">
+                  <Form.Control
+                    onChange={(e) => onChanging(e)}
+                    value={serialCitation.availabilityAndAccess}
+                    name="availabilityAndAccess"
+                    type="text"
+                    placeholder="Enter the Availability And Access"
+                  />
+                </Form.Group>
+              </Row>
+            </Col>
+          </Form.Group>
+          {type ? null : (
+            <Form.Group as={Row} className="mb-3 align-items-center">
+              <Form.Label column sm={3} className="fw-bold">
+                Location
+              </Form.Label>
+              <Col sm={9}>
+                <Form.Group className="mb-3" controlId="formGridAddress1">
+                  <Form.Control
+                    onChange={(e) => onChanging(e)}
+                    name="location"
+                    value={serialCitation.location}
+                    type="text"
+                    placeholder="Enter the availability location"
+                  />
+                </Form.Group>
+              </Col>
             </Form.Group>
-            <Form.Group as={Col} className="mb-3" controlId="formGridAddress1">
-            <Form.Control
-              onChange={(e) => onChanging(e)}
-              name="standardIdentifier"
-              value={serialCitation.standardIdentifier}
-              type="text"
-              placeholder="Enter the Standard Identifier"
-            />
-          </Form.Group>
-        </Row>
-        <Row>
-            <Form.Label><b>Availibility and Access</b></Form.Label>
-            <Form.Group as={Col} controlId="formGridState">              
-              <Form.Select
-                // onChange={(e) => onChanging(e)}
-                // value={serialCitation.availabilityAndAccess}
-                // name="availabilityAndAccess"
-                defaultValue="Choose..."
-              >
-                <option>Choose...</option>
-                <option>DOI</option>
-                <option>URI</option>
-                <option>URL</option>
-                                                
-              </Form.Select>
-            </Form.Group>
-            <Form.Group as={Col} className="mb-3" controlId="formGridAddress1">
-            <Form.Control
-              onChange={(e) => onChanging(e)}
-              value={serialCitation.availabilityAndAccess}
-              name="availabilityAndAccess"
-              type="text"
-              placeholder="Enter the Availability And Access"
-            />
-          </Form.Group>
-          </Row>
-          {type ? null:<Row className="mb-3">
-          <Form.Label><b>Location</b></Form.Label>
-          <Form.Group className="mb-3" controlId="formGridAddress1">
-            <Form.Control
-              onChange={(e) => onChanging(e)}
-              name="location"
-              value={serialCitation.location}
-              type="text"
-              placeholder="Enter the availability location"
-            />
-          </Form.Group>
-          </Row>}
+          )}
 
           <div>
             <center>

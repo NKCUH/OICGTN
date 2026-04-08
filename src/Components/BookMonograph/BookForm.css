@@ -1,3 +1,11 @@
 .Books .title{
     font-style: italic;
 }
+
+.bookform .form-group.row .col-form-label {
+  font-weight: 600;
+}
+
+.bookform .form-label {
+  margin-bottom: 0;
+}
