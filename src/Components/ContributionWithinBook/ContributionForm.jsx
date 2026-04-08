@@ -194,7 +194,7 @@ const ContributionForm = () => {
         >
 
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Chapter Title</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Chapter Title</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -207,7 +207,7 @@ const ContributionForm = () => {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Book Title</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Book Title</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -220,7 +220,7 @@ const ContributionForm = () => {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3 align-items-start">
-            <Form.Label column sm={3} className="fw-bold">
+            <Form.Label column sm={3} className="fw-bold text-start">
               Name of Creator(s)
             </Form.Label>
             <Col sm={9}>
@@ -287,7 +287,7 @@ const ContributionForm = () => {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3 align-items-start">
-            <Form.Label column sm={3} className="fw-bold">
+            <Form.Label column sm={3} className="fw-bold text-start">
               Editor
             </Form.Label>
             <Col sm={9}>
@@ -352,7 +352,7 @@ const ContributionForm = () => {
           </Row> */}
 
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Place</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Place</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -364,7 +364,7 @@ const ContributionForm = () => {
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3 align-items-start">
-            <Form.Label column sm={3} className="fw-bold">
+            <Form.Label column sm={3} className="fw-bold text-start">
               Publisher
             </Form.Label>
             <Col sm={9}>
@@ -402,7 +402,7 @@ const ContributionForm = () => {
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Date of Publication(Year)</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Date of Publication(Year)</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -415,7 +415,7 @@ const ContributionForm = () => {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}>
+            <Form.Label column sm={3} className="text-start">
               <b>Page range</b>
             </Form.Label>
             <Col sm={9}>
@@ -430,7 +430,7 @@ const ContributionForm = () => {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>DOI</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>DOI</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(event) =>
@@ -450,7 +450,7 @@ const ContributionForm = () => {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>URL</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>URL</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(event) =>

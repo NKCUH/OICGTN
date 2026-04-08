@@ -168,7 +168,7 @@ const PatentsForm = () => {
           }}
         >
           <Form.Group as={Row} className="mb-3 align-items-start">
-            <Form.Label column sm={3} className="fw-bold">
+            <Form.Label column sm={3} className="fw-bold text-start">
               Name of Creator(s)
             </Form.Label>
             <Col sm={9}>
@@ -236,7 +236,7 @@ const PatentsForm = () => {
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Patent application country</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Patent application country</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -248,7 +248,7 @@ const PatentsForm = () => {
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Title</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Title</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -261,7 +261,7 @@ const PatentsForm = () => {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Date</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Date</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -274,7 +274,7 @@ const PatentsForm = () => {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Patent Number</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Patent Number</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}

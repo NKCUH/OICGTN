@@ -167,7 +167,7 @@ const WebsitesForm = () => {
           }}
         >
           <Form.Group as={Row} className="mb-3 align-items-start">
-            <Form.Label column sm={3} className="fw-bold">
+            <Form.Label column sm={3} className="fw-bold text-start">
               Name of Creator(s)
             </Form.Label>
             <Col sm={9}>
@@ -240,7 +240,7 @@ const WebsitesForm = () => {
           )}
 
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Page Title</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Page Title</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -252,7 +252,7 @@ const WebsitesForm = () => {
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Website Title</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Website Title</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -345,7 +345,7 @@ const WebsitesForm = () => {
           )}
 
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Date of Publication</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Date of Publication</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -363,7 +363,7 @@ const WebsitesForm = () => {
           )}
 
           <Form.Group as={Row} className="mb-3 align-items-center">
-            <Form.Label column sm={3} className="fw-bold">
+            <Form.Label column sm={3} className="fw-bold text-start">
               URL
             </Form.Label>
             <Col sm={9}>
@@ -378,7 +378,7 @@ const WebsitesForm = () => {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Date of Citation</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Date of Citation</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}

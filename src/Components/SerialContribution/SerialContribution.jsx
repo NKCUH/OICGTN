@@ -213,7 +213,7 @@ const SerialContributionForm = ({ type }) => {
       <div className="serial">
         <Form onSubmit={handleSubmit}>
           <Form.Group as={Row} className="mb-3 align-items-start">
-            <Form.Label column sm={3} className="fw-bold">
+            <Form.Label column sm={3} className="fw-bold text-start">
               Name of Creator(s)
             </Form.Label>
             <Col sm={9}>
@@ -278,9 +278,9 @@ const SerialContributionForm = ({ type }) => {
             </Col>
           </Form.Group>
 
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formContribution">
-              <Form.Label><b>Title</b></Form.Label>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm={3} className="text-start"><b>Title</b></Form.Label>
+            <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 value={serialContributionCitation.titleOfTheContribution}
@@ -288,12 +288,12 @@ const SerialContributionForm = ({ type }) => {
                 type="text"
                 placeholder="Enter Title"
               />
-            </Form.Group>
-          </Row>
+            </Col>
+          </Form.Group>
 
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formYear">
-              <Form.Label><b>Date of Publication (Year)</b></Form.Label>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm={3} className="text-start"><b>Date of Publication (Year)</b></Form.Label>
+            <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 value={serialContributionCitation.year}
@@ -301,8 +301,8 @@ const SerialContributionForm = ({ type }) => {
                 type="text"
                 placeholder="Enter Year"
               />
-            </Form.Group>
-          </Row>
+            </Col>
+          </Form.Group>
 
           {false && (
             <Row className="mb-3">
@@ -335,9 +335,9 @@ const SerialContributionForm = ({ type }) => {
             </Row>
           )}
 
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formHost">
-              <Form.Label><b>Journal Name</b></Form.Label>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm={3} className="text-start"><b>Journal Name</b></Form.Label>
+            <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 value={serialContributionCitation.titleOfTheHostSerial}
@@ -345,8 +345,8 @@ const SerialContributionForm = ({ type }) => {
                 type="text"
                 placeholder="Enter Journal Name "
               />
-            </Form.Group>
-          </Row>
+            </Col>
+          </Form.Group>
 
           {false && (
             <Row className="mb-3">
@@ -515,9 +515,10 @@ const SerialContributionForm = ({ type }) => {
               </Form.Group>
             </Row>
           )}
-          <Row className="mb-3">
-            <Form.Label><b>Volume/Number/Issue</b></Form.Label>
-            {numeration.map((item, index) => {
+          <Form.Group as={Row} className="mb-3 align-items-start">
+            <Form.Label column sm={3} className="fw-bold text-start"><b>Volume/Number/Issue</b></Form.Label>
+            <Col sm={9}>
+              {numeration.map((item, index) => {
               return (
                 <Row key={index} className="mt-2">
                   <Form.Group as={Col} controlId="formGridState">
@@ -572,10 +573,11 @@ const SerialContributionForm = ({ type }) => {
                 </Row>
               );
             })}
-          </Row>
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formPageStart">
-              <Form.Label><b>Page Start</b></Form.Label>
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm={3} className="text-start"><b>Page Start</b></Form.Label>
+            <Col sm={4}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 value={serialContributionCitation.pageStart}
@@ -583,9 +585,9 @@ const SerialContributionForm = ({ type }) => {
                 type="text"
                 placeholder="Enter Page Start"
               />
-            </Form.Group>
-            <Form.Group as={Col} controlId="formPageEnd">
-              <Form.Label><b>Page End</b></Form.Label>
+            </Col>
+            <Form.Label column sm={1} className="text-start"><b>Page End</b></Form.Label>
+            <Col sm={4}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
                 value={serialContributionCitation.pageEnd}
@@ -593,13 +595,13 @@ const SerialContributionForm = ({ type }) => {
                 type="text"
                 placeholder="Enter Page End"
               />
-            </Form.Group>
-          </Row>
+            </Col>
+          </Form.Group>
 
           {isOnline && (
-            <Row className="mb-3">
-              <Form.Group as={Col} controlId="formIdentifier">
-                <Form.Label><b>DOI</b></Form.Label>
+            <Form.Group as={Row} className="mb-3">
+              <Form.Label column sm={3} className="text-start"><b>DOI</b></Form.Label>
+              <Col sm={9}>
                 <Form.Control
                   onChange={(event) =>
                     handleInputChange(event, setStandarIdentifier, standardIdentifier, 0)
@@ -609,13 +611,13 @@ const SerialContributionForm = ({ type }) => {
                   type="text"
                   placeholder="Enter DOI"
                 />
-              </Form.Group>
-            </Row>
+              </Col>
+            </Form.Group>
           )}
           {isOnline && (
-            <Row className="mb-3">
-              <Form.Group as={Col} controlId="formURL">
-                <Form.Label><b>URL</b></Form.Label>
+            <Form.Group as={Row} className="mb-3">
+              <Form.Label column sm={3} className="text-start"><b>URL</b></Form.Label>
+              <Col sm={9}>
                 <Form.Control
                   onChange={(event) =>
                     handleInputChange(event, setAvailability, availability, 0)
@@ -625,8 +627,8 @@ const SerialContributionForm = ({ type }) => {
                   type="text"
                   placeholder="Enter URL"
                 />
-              </Form.Group>
-            </Row>
+              </Col>
+            </Form.Group>
           )}
           {false && (
             <Row className="mb-3">

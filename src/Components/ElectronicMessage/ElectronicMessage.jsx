@@ -124,7 +124,7 @@ const ElectronicMessage = () => {
           }}
         >
           <Form.Group as={Row} className="mb-3 align-items-start">
-            <Form.Label column sm={3} className="fw-bold">
+            <Form.Label column sm={3} className="fw-bold text-start">
               Name of Creator(s)
             </Form.Label>
             <Col sm={9}>
@@ -190,7 +190,7 @@ const ElectronicMessage = () => {
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Title of The Message</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Title of The Message</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -203,7 +203,7 @@ const ElectronicMessage = () => {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>E-mail/Message Board/Online</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>E-mail/Message Board/Online</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -215,7 +215,7 @@ const ElectronicMessage = () => {
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>Year</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Year</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -228,7 +228,7 @@ const ElectronicMessage = () => {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3}><b>URL</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>URL</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
