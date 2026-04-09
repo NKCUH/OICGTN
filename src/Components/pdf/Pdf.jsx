@@ -658,7 +658,7 @@ const Pdf = ({ type }) => {
       ) : (
         <div id="outputBox">
           <center>
-            <h2>Your Resulted Citation</h2>
+            <h2 style={{textAlign: "center"}}>Your Resulted Citation</h2>
           </center>
           <br />
           {/* SURNAME, First Name, [Year]. Title of the contribution. Additional General Information. In: Title of the host serial. [Medium Designation]

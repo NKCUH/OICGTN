@@ -219,20 +219,16 @@ const PatentsForm = () => {
                     ) : (
                       <></>
                     )}
-                    {formFields.length - 1 === index && (
-                      <div as={Col} className="col-sm-1">
-                        <Button
-                          variant="link"
-                          className="ps-0 text-decoration-none"
-                          onClick={addCreatorField}
-                        >
-                          Add another Creator
-                        </Button>
-                      </div>
-                    )}
                   </Row>
                 );
               })}
+              <Button
+                variant="link"
+                className="ps-0 text-decoration-none"
+                onClick={addCreatorField}
+              >
+                Add another Creator
+              </Button>
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3">
@@ -299,7 +295,7 @@ const PatentsForm = () => {
       ) : (
         <div id="outputBox">
           <center>
-            <h2>Your Resulted Citation</h2>
+            <h2 style={{textAlign: "center"}}>Your Resulted Citation</h2>
           </center>
           <br />
           {/* SURNAME, First Name, [Year]. Title of the contribution. Additional General Information. In: Title of the host serial. [Medium Designation]
@@ -367,14 +363,6 @@ const PatentsForm = () => {
                 ) : (
                   <>
                     {patentsCitation.patentNumber}
-                    {". "}
-                  </>
-                )}
-                {patentsCitation.persistentIdentifiers === "" ? (
-                  ""
-                ) : (
-                  <>
-                    Available from: [{patentsCitation.persistentIdentifiers}]
                     {". "}
                   </>
                 )}

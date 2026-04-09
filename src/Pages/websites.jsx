@@ -4,7 +4,7 @@ import CitContainer from '../Components/Container';
 
 const Websites = ()=> {
   return (
-    <CitContainer title="Websites">
+    <CitContainer title="Websites" titleStyle={{ textAlign: "center" }}>
        <WebsitesForm/>        
     </CitContainer>
   );

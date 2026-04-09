@@ -345,7 +345,7 @@ const WebsitesForm = () => {
           )}
 
           <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm={3} className="text-start"><b>Date of Publication</b></Form.Label>
+            <Form.Label column sm={3} className="text-start"><b>Date of Publication (Year)</b></Form.Label>
             <Col sm={9}>
               <Form.Control
                 onChange={(e) => onChanging(e)}
@@ -403,9 +403,7 @@ const WebsitesForm = () => {
         ""
       ) : (
         <div id="outputBox">
-          <center>
-            <h2>Your Resulted Citation :- </h2>
-          </center>
+          <h2 style={{textAlign: "center"}}>Your Resulted Citation :- </h2>
           <br />
           {/* SURNAME, First Name, [Year]. Title of the contribution. Additional General Information. In: Title of the host serial. [Medium Designation]
           . Subsidiary Titles. Edition. Place: Publisher, Date of Publication. Numeration (of volume)

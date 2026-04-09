@@ -484,7 +484,7 @@ const ContributionForm = () => {
       ) : (
         <div id="outputBox">
           <center>
-            <h2>Your Resulted Citation </h2>
+            <h2 style={{textAlign: "center"}}>Your Resulted Citation </h2>
           </center>
           <br />
           {/* SURNAME, First Name, [Year]. Title of the contribution. Additional General Information. In: Title of the host serial. [Medium Designation]
@@ -601,13 +601,14 @@ const ContributionForm = () => {
                     {", "}
                   </>
                 )}
-                {contributionCitation.dateOfPublication === "" ? (
-                  ""
-                ) : (
+                {contributionCitation.year === "" &&
+                contributionCitation.dateOfPublication !== "" ? (
                   <>
                     {contributionCitation.dateOfPublication}
                     {", "}
                   </>
+                ) : (
+                  ""
                 )}
                 {numeration.length <= 1 &&
                 (numeration[0] === "" || numeration[0] === undefined) ? (

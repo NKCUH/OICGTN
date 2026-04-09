@@ -4,7 +4,7 @@ import CitContainer from '../Components/Container';
 
 const ElectronicMessages = ()=> {
   return (
-    <CitContainer title="Electronic Messages">
+    <CitContainer title="Electronic Messages" titleStyle={{ textAlign: "center" }}>
        <ElectronicForm/>        
     </CitContainer>
   );

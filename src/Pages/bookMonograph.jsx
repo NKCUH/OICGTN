@@ -4,7 +4,7 @@ import CitContainer from '../Components/Container';
 
 const BookMonograph = ()=> {
   return (
-    <CitContainer title="Book">
+    <CitContainer title="Book" titleStyle={{ textAlign: "center" }}>
        <BooksForm/>        
     </CitContainer>
   );

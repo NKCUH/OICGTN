@@ -409,7 +409,7 @@ const BooksForm = ({ type }) => {
       ) : (
         <div id="outputBox" className="!w-full md:w-full ">
           <center>
-            <h2>Your Resulted Citation</h2>
+            <h2 style={{textAlign: "center"}}>Your Resulted Citation</h2>
           </center>
           <br />
           {/* SURNAME, First Name, [Year]. Title of the contribution. Additional General Information. In: Title of the host serial. [Medium Designation]
@@ -480,23 +480,6 @@ const BooksForm = ({ type }) => {
                 ) : (
                   <>
                     Available from: {booksCitation.url}{". "}
-                  </>
-                )}
-                {standardIdentifier.length <= 1 &&
-                (standardIdentifier[0] === "" ||
-                  standardIdentifier[0] === undefined) ? (
-                  ""
-                ) : (
-                  <>
-                    {standardIdentifier.map((item, index) => {
-                      return (
-                        <span key={index}>
-                          ISBN {standardIdentifier[index]}
-                          {index < standardIdentifier.length - 1 && ", "}
-                        </span>
-                      );
-                    })}
-                    {". "}
                   </>
                 )}
               </p>

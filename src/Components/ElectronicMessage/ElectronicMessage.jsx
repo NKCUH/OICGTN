@@ -173,20 +173,16 @@ const ElectronicMessage = () => {
                     ) : (
                       <></>
                     )}
-                    {formFields.length - 1 === index && (
-                      <Col className="col-sm-1">
-                        <Button
-                          variant="link"
-                          className="ps-0 text-decoration-none"
-                          onClick={addCreatorField}
-                        >
-                          Add another Creator
-                        </Button>
-                      </Col>
-                    )}
                   </Row>
                 );
               })}
+              <Button
+                variant="link"
+                className="ps-0 text-decoration-none"
+                onClick={addCreatorField}
+              >
+                Add another Creator
+              </Button>
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3">
@@ -253,9 +249,7 @@ const ElectronicMessage = () => {
         ""
       ) : (
         <div id="outputBox">
-          <center>
-            <h2>Your Resulted Citation :- </h2>
-          </center>
+          <h2 style={{textAlign: "center"}}>Your Resulted Citation :- </h2>
           <br />
           {/* SURNAME, First Name, [Year]. Title of the contribution. Additional General Information. In: Title of the host serial. [Medium Designation]
           . Subsidiary Titles. Edition. Place: Publisher, Date of Publication. Numeration (of volume)

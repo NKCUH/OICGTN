@@ -4,7 +4,7 @@ import CitContainer from '../Components/Container';
 
 const Patents = ()=> {
   return (
-    <CitContainer title="Patents">
+    <CitContainer title="Patents" titleStyle={{ textAlign: "center" }}>
        <PatentsForm/>        
     </CitContainer>
   );

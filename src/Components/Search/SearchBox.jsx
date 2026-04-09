@@ -195,7 +195,6 @@ const SearchBox = () => {
         <option value="serial-contribution">Journal</option>
         <option value="website">Website</option>
         <option value="patent">Patent</option>
-        <option value="electronic-message">Electronic Message</option>
       </select>
 
       <input

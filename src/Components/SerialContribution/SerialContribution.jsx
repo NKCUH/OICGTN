@@ -659,9 +659,7 @@ const SerialContributionForm = ({ type }) => {
         ""
       ) : (
         <div id="outputBox">
-          <center>
-            <h2>Your Resulted Citation :- </h2>
-          </center>
+          <h2 style={{textAlign: "center"}}>Your Resulted Citation :- </h2>
           <br />
           {/* SURNAME, First Name, [Year]. Title of the contribution. Additional General Information. In: Title of the host serial. [Medium Designation]
           . Subsidiary Titles. Edition. Place: Publisher, Date of Publication. Numeration (of volume)
@@ -765,13 +763,14 @@ const SerialContributionForm = ({ type }) => {
                     {", "}
                   </>
                 )}
-                {serialContributionCitation.dateOfPublication === "" ? (
-                  ""
-                ) : (
+                {serialContributionCitation.year === "" &&
+                serialContributionCitation.dateOfPublication !== "" ? (
                   <>
                     {serialContributionCitation.dateOfPublication}
                     {". "}
                   </>
+                ) : (
+                  ""
                 )}
                 {(() => {
                   let volume = "";
@@ -888,7 +887,13 @@ const SerialContributionForm = ({ type }) => {
                       {serialContributionCitation.year}
                       {(serialContributionCitation.pageStart !== "" ||
                         serialContributionCitation.pageEnd !== "") ? (
-                        `${serialContributionCitation.year === "" ? "" : ", "}p. ${serialContributionCitation.pageStart}${serialContributionCitation.pageEnd ? `–${serialContributionCitation.pageEnd}` : ""}`
+                        <>
+                          {serialContributionCitation.year !== "" && ", "}
+                          p. {serialContributionCitation.pageStart}
+                          {serialContributionCitation.pageEnd
+                            ? `–${serialContributionCitation.pageEnd}`
+                            : ""}
+                        </>
                       ) : (
                         ""
                       )}
@@ -911,7 +916,7 @@ const SerialContributionForm = ({ type }) => {
                     ""
                   ) : (
                     <>
-                      {", "}
+                      {" "}
                       {serialContributionCitation.year}
                     </>
                   )}

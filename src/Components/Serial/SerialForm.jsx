@@ -434,7 +434,7 @@ const SerialForm = ({type}) => {
       ) : (
         <div id="outputBox">
           <center>
-            <h2>Your Resulted Citation </h2>
+            <h2 style={{textAlign: "center"}}>Your Resulted Citation </h2>
           </center>
           <br />
           <center>
