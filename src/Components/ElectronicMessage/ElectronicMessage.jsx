@@ -255,7 +255,7 @@ const ElectronicMessage = () => {
           . Subsidiary Titles. Edition. Place: Publisher, Date of Publication. Numeration (of volume)
           , Range of page number(s) of the contribution, [viewed Date of citation]. Standard Identifier. [Available from: Availability and access]. At: [Location]. */}
 
-          <center>
+          <div style={{ textAlign: "left" }}>
             <div id="output">
               <p ref={ref} id="outputResult">
                 {formatAuthors(formFields, "reference")}
@@ -356,7 +356,7 @@ const ElectronicMessage = () => {
             >
               Copy
             </button> */}
-          </center>
+          </div>
         </div>
       )}
     </>

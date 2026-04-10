@@ -4,7 +4,7 @@ import CitContainer from "../Components/Container";
 
 const OnlineJournal = () => {
   return (
-    <CitContainer title="Online Journal">
+    <CitContainer title="Online Journal" titleStyle={{ textAlign: "center" }}>
       <SerialContributionForm type="online" />
     </CitContainer>
   );

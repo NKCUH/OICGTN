@@ -437,7 +437,7 @@ const SerialForm = ({type}) => {
             <h2 style={{textAlign: "center"}}>Your Resulted Citation </h2>
           </center>
           <br />
-          <center>
+          <div style={{ textAlign: "left" }}>
 
           <div id="output">
               <div ref={ref} id="outputResult">
@@ -572,7 +572,7 @@ const SerialForm = ({type}) => {
             >
               {copy ? "Copied" : "Copy"}
             </button> */}
-          </center>
+          </div>
         </div>
       )}
     </>
