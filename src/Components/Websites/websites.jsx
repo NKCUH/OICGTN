@@ -54,6 +54,19 @@ const WebsitesForm = () => {
     const upperLast = safeLast ? safeLast.toUpperCase() : "";
     return [firstInitial, upperLast].filter(Boolean).join(" ");
   };
+
+  const getLastName = (firstName, lastName) => {
+    const safeLast = (lastName || "").trim();
+    return safeLast ? safeLast.toUpperCase() : "";
+  };
+
+  const getYear = (date) => {
+    if (!date) return "";
+    const dateStr = String(date);
+    const match = dateStr.match(/\b\d{4}\b/);
+    return match ? match[0] : "";
+  };
+
   const ref = useRef();
 
   const [result, setResult] = useState(false);
@@ -186,6 +199,7 @@ const WebsitesForm = () => {
                         <option>Editor</option>
                         <option>Designer</option>
                         <option>Translator</option>
+                        <option>Organisation</option>
                       </Form.Select>
                     </Form.Group>
                     <Form.Group as={Col} controlId="formFname">
@@ -438,6 +452,7 @@ const WebsitesForm = () => {
                       {websitesCitation.websiteTitle}
                       {". "}
                     </span>
+                    Web site.{" "}
                   </>
                 )}
 
@@ -519,7 +534,7 @@ const WebsitesForm = () => {
                 {websitesCitation.dateOfPublication === "" ? (
                   ""
                 ) : (
-                  <>{websitesCitation.dateOfPublication} </>
+                  <>[{getYear(websitesCitation.dateOfPublication)}]. </>
                 )}
                 {numeration.length <= 1 &&
                 (numeration[0] === "" || numeration[0] === undefined) ? (
@@ -589,12 +604,12 @@ const WebsitesForm = () => {
                 >
                   {hasCreatorInput
                     ? formFields.map((item, index) => {
-                        const formatted = formatCreatorInline(item[0], item[1]);
-                        if (!formatted) return null;
+                        const lastName = getLastName(item[0], item[1]);
+                        if (!lastName) return null;
                         return (
                           <span key={index}>
-                            {formatted}
-                            {index < formFields.length - 1 ? ", " : ""}
+                            {lastName}
+                            {index < formFields.length - 1 ? " & " : ""}
                           </span>
                         );
                       })
@@ -606,7 +621,7 @@ const WebsitesForm = () => {
                   ) : (
                     <>
                       {"("}
-                      {websitesCitation.dateOfPublication}
+                      {getYear(websitesCitation.dateOfPublication)}
                       {")"}
                     </>
                   )}
@@ -623,9 +638,14 @@ const WebsitesForm = () => {
                   {"("}
                   {hasCreatorInput
                     ? formFields.map((item, index) => {
-                        const formatted = formatCreatorInline(item[0], item[1]);
-                        if (!formatted) return null;
-                        return <span key={index}>{formatted}</span>;
+                        const lastName = getLastName(item[0], item[1]);
+                        if (!lastName) return null;
+                        return (
+                          <span key={index}>
+                            {lastName}
+                            {index < formFields.length - 1 ? " & " : ""}
+                          </span>
+                        );
                       })
                     : websitesCitation.pageTitle !== ""
                       ? websitesCitation.pageTitle
@@ -633,7 +653,7 @@ const WebsitesForm = () => {
                   {websitesCitation.dateOfPublication === "" ? (
                     ""
                   ) : (
-                    <> {websitesCitation.dateOfPublication}</>
+                    <> {getYear(websitesCitation.dateOfPublication)}</>
                   )}
                   {")"}
                 </p>

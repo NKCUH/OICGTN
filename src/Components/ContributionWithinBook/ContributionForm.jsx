@@ -238,7 +238,7 @@ const ContributionForm = () => {
                         <option>Author</option>
                         <option>Editor</option>
                         <option>Reviewer</option>
-                        <option>Reviser</option>
+                        <option>Organisation</option>
                         <option>Translator</option>
                       </Form.Select>
                     </Form.Group>

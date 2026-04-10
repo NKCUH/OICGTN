@@ -129,6 +129,18 @@ const PatentsForm = () => {
     return [firstInitial, upperLast].filter(Boolean).join(" ");
   };
 
+  const getLastName = (firstName, lastName) => {
+    const safeLast = (lastName || "").trim();
+    return safeLast ? safeLast.toUpperCase() : "";
+  };
+
+  const getYear = (date) => {
+    if (!date) return "";
+    const dateStr = String(date);
+    const match = dateStr.match(/\b\d{4}\b/);
+    return match ? match[0] : "";
+  };
+
   const addField = (UseStateName, stateName, obj) => {
     UseStateName([...stateName, obj]);
   };
@@ -187,6 +199,7 @@ const PatentsForm = () => {
                         <option>Editor</option>
                         <option>Reviewer</option>
                         <option>Translator</option>
+                        <option>Organisation</option>
                       </Form.Select>
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridEmail">
@@ -330,7 +343,7 @@ const PatentsForm = () => {
                   ""
                 ) : (
                   <>
-                    {patentsCitation.titleOfTheInformationSource}
+                    <i>{patentsCitation.titleOfTheInformationSource}</i>
                     {". "}
                   </>
                 )}
@@ -362,7 +375,7 @@ const PatentsForm = () => {
                   ""
                 ) : (
                   <>
-                    {patentsCitation.patentNumber}
+                    Patent Number {patentsCitation.patentNumber}
                     {". "}
                   </>
                 )}
@@ -407,15 +420,16 @@ const PatentsForm = () => {
                   className="text-blue-500 cursor-pointer"
                 >
                   {formFields.map((item, index) => {
-                    const formatted = formatCreatorInline(item[0], item[1]);
-                    if (!formatted) return null;
+                    const lastName = getLastName(item[0], item[1]);
+                    if (!lastName) return null;
                     return (
                       <span key={index}>
-                        {formatted}
-                        {index < formFields.length - 1 ? ", " : ""}
+                        {lastName}
+                        {index < formFields.length - 1 ? " & " : ""}
                       </span>
                     );
                   })}
+                  ({getYear(patentsCitation.dateOfApplication)})
                 </p>
               </div>
               <div className="md:flex  gap-10 mx-10">
@@ -426,18 +440,18 @@ const PatentsForm = () => {
                   }}
                   className="text-blue-500 cursor-pointer"
                 >
-                  {"("}
+                  (
                   {formFields.map((item, index) => {
-                    const formatted = formatCreatorInline(item[0], item[1]);
-                    if (!formatted) return null;
+                    const lastName = getLastName(item[0], item[1]);
+                    if (!lastName) return null;
                     return (
                       <span key={index}>
-                        {formatted}
+                        {lastName}
                         {index < formFields.length - 1 ? " & " : ""}
                       </span>
                     );
                   })}
-                  {")"}
+                  {getYear(patentsCitation.dateOfApplication) ? ` ${getYear(patentsCitation.dateOfApplication)}` : ""})
                 </p>
               </div>
             </div>
