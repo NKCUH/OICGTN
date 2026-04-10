@@ -13,7 +13,7 @@ const Guide = () => {
             {[
               {
                 title: "1. Book",
-                referenceFormat: `SURNAME, First Name., [Year]. Title of the item [sefont-semibold Designation]. Subsidiary Titles. Edition. Translated from Title by TRANSLATOR. Revised by AUTHOR. Place: Publisher, Date of Publication, [Date of update/revision]. [viewed Date of citation]. Series title and number. Standard Identifier. [Available from: Availability and access]. At:[Location].`,
+                referenceFormat: `SURNAME, First Name., [Year]. Title [sefont-semibold Designation]. Edition. Translated from Title by TRANSLATOR. Revised by AUTHOR. Place: Publisher.`,
                 inTextCitation: [
                   {
                     type: "Parenthetical",
@@ -24,9 +24,9 @@ const Guide = () => {
                     format: "Name of Creator LAST NAME (YEAR)",
                   },
                 ],
-                example: `KUMAR, Naresh, [2017]. Interdisciplinary Digital Preservation Tools and Technologies IGI Global, 2017, [viewed 23-01-2026]. ISBN 10.4018/978-1-5225-1653-8.`,
-                narrativeExample: `Naresh Kumar (2017)`,
-                parentheticalExample: `(Naresh Kumar 2017)`,
+                example: `KUMAR, N., [2017]. Interdisciplinary Digital Preservation Tools and Technologies. USA: IGI Global.`,
+                narrativeExample: `KUMAR (2017)`,
+                parentheticalExample: `(KUMAR 2017)`,
               },
               {
                 title: "2. e-Book",

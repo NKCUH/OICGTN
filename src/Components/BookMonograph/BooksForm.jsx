@@ -322,6 +322,7 @@ const BooksForm = ({ type }) => {
             </Col>
           </Form.Group>
           {publisher.map((item, index) => {
+            const inputColSize = publisher.length !== 1 ? 6 : 9;
             return (
               <Form.Group
                 as={Row}
@@ -336,7 +337,7 @@ const BooksForm = ({ type }) => {
                 ) : (
                   <Col sm={3}></Col>
                 )}
-                <Col sm={6}>
+                <Col sm={inputColSize}>
                   <Form.Control
                     onChange={(event) =>
                       handleInputChange(

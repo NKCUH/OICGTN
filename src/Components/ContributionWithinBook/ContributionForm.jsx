@@ -54,6 +54,19 @@ const ContributionForm = () => {
     return `${upperLast}, ${firstInitial}, `;
   };
 
+  const getEditorDisplayName = (fullName) => {
+    const trimmed = (fullName || "").trim();
+    if (!trimmed) return "";
+    
+    const parts = trimmed.split(/\s+/);
+    if (parts.length === 0) return "";
+    
+    const firstInitial = parts[0].charAt(0).toUpperCase() + ".";
+    const lastName = parts[parts.length - 1].toUpperCase();
+    
+    return `${firstInitial} ${lastName}`;
+  };
+
   const formatAuthors = (authors, mode) => {
     const normalizedAuthors = authors
       .map((author) => getAuthorDisplayName(author[0], author[1], mode))
@@ -430,6 +443,19 @@ const ContributionForm = () => {
           </Form.Group>
 
           <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm={3} className="text-start"><b>Vol. No. / Series</b></Form.Label>
+            <Col sm={9}>
+              <Form.Control
+                onChange={(e) => onChanging(e)}
+                value={contributionCitation.seriesTitleAndNumber}
+                name="seriesTitleAndNumber"
+                type="text"
+                placeholder="Enter Vol. No. / Series"
+              />
+            </Col>
+          </Form.Group>
+
+          <Form.Group as={Row} className="mb-3">
             <Form.Label column sm={3} className="text-start"><b>DOI</b></Form.Label>
             <Col sm={9}>
               <Form.Control
@@ -526,7 +552,7 @@ const ContributionForm = () => {
                     {creatorHost.map((item, index) => {
                       return (
                         <span key={index}>
-                          {creatorHost[index]}
+                          {getEditorDisplayName(creatorHost[index])}
                           {index < creatorHost.length - 1 && ", "}
                         </span>
                       );
