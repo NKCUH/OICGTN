@@ -246,34 +246,34 @@ const HomeComponent = () => {
       {/* Sections converted to page links for streamlined same-page experiences */}
       <div className="w-[850px] mx-auto mt-4">
         <div className="flex flex-col md:flex-row gap-4 justify-between min-h-[75px]">
-          <div className="flex-1 rounded-lg p-4 bg-blue-50 border border-blue-100">
+          <div className="flex-1 rounded-lg p-4 bg-blue-50 border border-blue-100 text-center">
             <button
               onClick={() => navigate('/cite-book')}
               className="font-bold text-lg text-[#2986ea] hover:underline"
             >
               Cite a Book
             </button>
-            <p className="text-gray-600 text-sm mt-1">Book | e-Book | Book Contribution</p>
+            <p className="text-gray-600 text-sm mt-1">Book | e-Book | Book Chapter</p>
           </div>
 
-          <div className="flex-1 rounded-lg p-4 bg-green-50 border border-green-100">
+          <div className="flex-1 rounded-lg p-4 bg-green-50 border border-green-100 text-center">
             <button
               onClick={() => navigate('/cite-journal')}
               className="font-bold text-lg text-[#28A745] hover:underline"
             >
               Cite a Journal
             </button>
-            <p className="text-gray-600 text-sm mt-1">Journal | E-Journal | Journal Contribution</p>
+            <p className="text-gray-600 text-sm mt-1">Journal | E-Journal</p>
           </div>
 
-          <div className="flex-1 rounded-lg p-4 bg-purple-50 border border-purple-100">
+          <div className="flex-1 rounded-lg p-4 bg-purple-50 border border-purple-100 text-center">
             <button
               onClick={() => navigate('/cite-other')}
               className="font-bold text-lg text-[#9C27B0] hover:underline"
             >
               Cite Other Sources
             </button>
-            <p className="text-gray-600 text-sm mt-1">Websites | Electronic Messages | Patents</p>
+            <p className="text-gray-600 text-sm mt-1">Websites | Patents</p>
           </div>
         </div>
       </div>

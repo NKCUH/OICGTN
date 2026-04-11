@@ -13,7 +13,7 @@ const Guide = () => {
             {[
               {
                 title: "1. Book",
-                referenceFormat: `SURNAME, First Name., [Year]. Title [sefont-semibold Designation]. Edition. Translated from Title by TRANSLATOR. Revised by AUTHOR. Place: Publisher.`,
+                referenceFormat: `SURNAME, First Name., [Year]. Title Edition. Place: Publisher.`,
                 inTextCitation: [
                   {
                     type: "Parenthetical",
@@ -30,7 +30,7 @@ const Guide = () => {
               },
               {
                 title: "2. e-Book",
-                referenceFormat: `SURNAME, First Name., [Year]. Title of the item [sefont-semibold Designation]. Subsidiary Titles. Edition. Translated from Title by TRANSLATOR. Revised by AUTHOR. Place: Publisher, Date of Publication, [Date of update/revision]. [viewed Date of citation]. Series title and number. Standard Identifier. [Available from: Availability and access].`,
+                referenceFormat: `SURNAME, First Name., [Year]. Title. Edition. Place: Publisher. Available from: URL.`,
                 inTextCitation: [
                   {
                     type: "Parenthetical",
@@ -41,32 +41,32 @@ const Guide = () => {
                     format: "Name of Creator LAST NAME (YEAR)",
                   },
                 ],
-                example: `ALAGH, Yoginder K., SRIDHARAN, Eswaran, KALAM, A P J Abdul, RAJAN, Y S, [2023]. India 2020 [Online]. 1st. United Nations, 2023-04-21, [viewed 23-01-2026]. ISBN 9789351184560. Available from: https://www.flipkart.com/india-2020/p/itmeb2c4ef9cc47b.`,
-                narrativeExample: `Yoginder K. AlaghEswaran SridharanA P J Abdul KalamY S Rajan (2023)`,
-                parentheticalExample: `(Yoginder K. Alagh Eswaran Sridharan A P J Abdul Kalam Y S Rajan 2023)`,
+                example: `SPEIRS, T., WILSON, B., LECKIE, [2021]. Higher Chemistry: Comprehensive textbook for the CfE (Leckie Student Book). London: Harper Collins UK, 1st. Available from: http://books.google.co.in/books?id=QbkjEAAAQBAJ&dq=Higher+Chemistry:+Comprehensive+textbook+for+the+CfE&hl=&source=gbs_api.`,
+                narrativeExample: `SPEIRS, WILSON, LECKIE (2021)`,
+                parentheticalExample: `(SPEIRS, WILSON, LECKIE 2021)`,
               },
               {
-                title: "3. Contribution within a Book",
-                referenceFormat: `SURNAME, First Name., [Year]. Title of the contribution. In: NAME OF CREATOR(S) OF THE HOST ITEM, ed. Title of the host item. [Medium Designation]. Edition. Place: Publisher, Date of Publication, Numeration (of volume). Range of page number(s) of the contribution. [Date of update/revision]. [viewed Date of citation]. Series title and number. Standard Identifier. [Available from: Availability and access]. At:[Location].`,
+                title: "3.  Book Chapter",
+                referenceFormat: `SURNAME, First Name., [Year]. Chapter Title. In: Editor, ed. Book Title. Place: Publisher, Vol. No./Series. Page Range. DOI. Available from: URL.`,
                 inTextCitation: [
                   {
                     type: "Parenthetical",
                     format:
-                      "(Name of Creator LAST NAME YEAR, Range of page number(s) of the contribution)",
+                      "(Name of Creator LAST NAME YEAR, Page Range)",
                   },
                   {
                     type: "Narrative",
                     format:
-                      "Name of Creator LAST NAME (YEAR, Range of page number(s) of the contribution)",
+                      "Name of Creator LAST NAME (YEAR, Page Range)",
                   },
                 ],
-                example: `KUMAR, Naresh, CASAROSA, Vittore, [2017]. Expressing Needs of Digital Audio-Visual Applications in Different Communities of Practice for Long-Term Preservation. In: Naresh Kumar and Tariq Ashraf, ed. Interdisciplinary Digital Preservation Tools and Technologies. [Print]. New York: IGI Global, 2017, ISBN 10.4018/978-1-5225-1653-8.ch004.`,
-                narrativeExample: `Naresh KumarVittore Casarosa (2017)`,
-                parentheticalExample: `(Naresh Kumar(Vittore Casarosa 2017)`,
+                example: `KUMAR, N., CASAROSA, V., [2017]. Expressing Needs of Digital Audio-Visual Applications in Different Communities of Practice for Long-Term Preservation. In: N. KUMAR, ed. <i>Interdisciplinary Digital Preservation Tools and Technologies</i>. New York: IGI Global, pp. 54-78. DOI 10.4018/978-1-5225-1653-8.ch004.`,
+                narrativeExample: `KUMAR & CASAROSA (2017, p. 54-78)`,
+                parentheticalExample: `(KUMAR & CASAROSA 2017, p. 54-78)`,
               },
               {
                 title: "4. Journal",
-                referenceFormat: `SURNAME, First Name, [Year]. Title of the contribution. Additional General Information. In: Title of the host serial. [Medium Designation]. Subsidiary Titles. Edition. Place: Publisher, Date of Publication. Numeration (of volume), Range of page number(s) of the contribution, [viewed Date of citation]. Standard Identifier. [Available from: Availability and access]. At: [Location].`,
+                referenceFormat: `SURNAME, First Name, [Year]. Title. In: Journal Name. Vol. (Number or Issue), Page Range.`,
                 inTextCitation: [
                   {
                     type: "Parenthetical",
@@ -74,32 +74,13 @@ const Guide = () => {
                   },
                   { type: "Narrative", format: "Title of the Journal (YEAR)" },
                 ],
-                example: `Annals of Library and Information Studies. [Print]. [2005]. CSIR-National Institute of Science Communication and Policy Research (NIScPR), 54, 2. [viewed 2026-01-28]. ISSN UOM:39015081496690. Available from: http://books.google.co.in/books?id=SNjgAAAAMAAJ&dq=Annals+of+Library+and+Information+Studies&hl=&source=gbs_api`,
-                narrativeExample: `Annals of Library and Information Studies (2005)`,
-                parentheticalExample: `(Annals of Library and Information Studies 2005)`,
+                example: `MADHUSUDHAN, M., PANDEY, P., SINGH, B., [2025]. A systematic literature review on academic writing tools. In: World Digital Libraries: An International Journal (WDL). 18(2). pp. 8–13.`,
+                narrativeExample: `MADHUSUDHAN, PANDEY, SINGH (2025)`,
+                parentheticalExample: `(MADHUSUDHAN, PANDEY, SINGH 2025)`,
               },
               {
-                title: "5. Contribution within Journal",
-                referenceFormat: `SURNAME, First Name, [Year]. Title of the contribution. Additional General Information. In: Title of the host serial. [Medium Designation]. Subsidiary Titles. Edition. Place: Publisher, Date of Publication. Numeration (of volume), Range of page number(s) of the contribution, [viewed Date of citation]. Standard Identifier. [Available from: Availability and access]. At: [Location].`,
-                inTextCitation: [
-                  {
-                    type: "Parenthetical",
-                    format:
-                      "(Name of Creator LAST NAME YEAR, Range of page number(s) of the contribution)",
-                  },
-                  {
-                    type: "Narrative",
-                    format:
-                      "Name of Creator LAST NAME (YEAR, Range of page number(s) of the contribution)",
-                  },
-                ],
-                example: `DUAN, Xiaoyan, CHEN, Shiyi, TIAN, Feiyan, CHU, Ganghui, DUAN, xiaoyan, CHU, ganghui, TIAN, Feiyang, [2025]. Bimetallic ScAg-MOFs as peroxide-mimicking enzymes combined with NIR spectroscopy for rapid prediction of uric acid. In: Crossref. Informa UK Limited, 2025-11-02. 15, 6. pp. 915-926, [viewed 23-01-2026]. Available from: https://doi.org/10.1080/22297928.2025.2567998.`,
-                narrativeExample: `Xiaoyan DuanShiyi ChenFeiyan TianGanghui ChuXiaoyan DuanGanghui ChuFeiyang Tian (2025, 915-926)`,
-                parentheticalExample: `(Xiaoyan Duan Shiyi Chen Feiyan Tian Ganghui Chu Xiaoyan Duan Ganghui Chu Feiyang Tian 2025, 915-926)`,
-              },
-              {
-                title: "6. e-Journal",
-                referenceFormat: `SURNAME, First Name, [Year]. Title of the contribution. Additional General Information. In: Title of the host serial. [Medium Designation]. Subsidiary Titles. Edition. Place: Publisher, Date of Publication. Numeration (of volume), Range of page number(s) of the contribution, [viewed Date of citation]. Standard Identifier. [Available from: Availability and access].`,
+                title: "5. e-Journal",
+                referenceFormat: `SURNAME, First Name, [Year]. Title. In: Journal Name. Vol. (Number or Issue), Page Range. DOI. Available from: URL.`,
                 inTextCitation: [
                   {
                     type: "Parenthetical",
@@ -110,32 +91,13 @@ const Guide = () => {
                     format: "Name of Creator LAST NAME (YEAR)",
                   },
                 ],
-                example: `Annals of Library and Information Studies. [Online]. [2005]. CSIR-National Institute of Science Communication and Policy Research (NIScPR), 54, 2. [viewed 2026-01-28]. ISSN UOM:39015081496690. Available from: http://books.google.co.in/books?id=SNjgAAAAMAAJ&dq=Annals+of+Library+and+Information+Studies&hl=&source=gbs_api.`,
-                narrativeExample: `Annals of Library and Information Studies (2005)`,
-                parentheticalExample: `(Annals of Library and Information Studies 2005)`,
+                example: `KUMAR, N., MADHUSUDHAN, M., [2024]. Referencing revisited: A Comparative Look at MLA, APA and IS:IDBR. In: Annals of Library and Information Studies. CSIR-National Institute of Science Communication and Policy Research (NIScPR), 71. pp. 341–348. DOI 10.56042/alis.v71i3.10353. Available from: https://or.niscpr.res.in/index.php/ALIS/article/view/10353/3447.`,
+                narrativeExample: `KUMAR & MADHUSUDHAN (2024, p. 341–348)`,
+                parentheticalExample: `(KUMAR & MADHUSUDHAN 2024, p. 341–348)`,
               },
               {
-                title: "7. e-Research Article in Journal",
-                referenceFormat: `SURNAME, First Name, [Year]. Title of the contribution. Additional General Information. In: Title of the host serial. [Medium Designation]. Subsidiary Titles. Edition. Place: Publisher, Date of Publication. Numeration (of volume), Range of page number(s) of the contribution, [viewed Date of citation]. Standard Identifier. [Available from: Availability and access].`,
-                inTextCitation: [
-                  {
-                    type: "Parenthetical",
-                    format:
-                      "(Name of Creator LAST NAME YEAR, Range of page number(s) of the contribution)",
-                  },
-                  {
-                    type: "Narrative",
-                    format:
-                      "Name of Creator LAST NAME (YEAR, Range of page number(s) of the contribution)",
-                  },
-                ],
-                example: `DUAN, Xiaoyan, CHEN, Shiyi, TIAN, Feiyan, CHU, Ganghui, DUAN, xiaoyan, CHU, ganghui, TIAN, Feiyang, [2025]. Bimetallic ScAg-MOFs as peroxide-mimicking enzymes combined with NIR spectroscopy for rapid prediction of uric acid. In: Crossref. Informa UK Limited, 2025-11-02. 15, 6. pp. 915-926, [viewed 23-01-2026]. Available from: https://doi.org/10.1080/22297928.2025.2567998.`,
-                narrativeExample: `Xiaoyan DuanShiyi ChenFeiyan TianGanghui ChuXiaoyan DuanGanghui ChuFeiyang Tian (2025, 915-926)`,
-                parentheticalExample: `(Xiaoyan Duan Shiyi Chen Feiyan Tian Ganghui Chu Xiaoyan Duan Ganghui Chu Feiyang Tian 2025, 915-926)`,
-              },
-              {
-                title: "8. Websites",
-                referenceFormat: `SURNAME, First Name. Standard Identifiers of creators' public identities. Page title. In: Web site title. Edition. Format and resource type. System requirements. Subsidiary Creator. Place: Publisher, Date of Publication Numeration (of volume), [Date of update/revision]. [viewed Date of citation]. Standard Identifier. [Available from: Availability and access]. Relationships.`,
+                title: "6. Websites",
+                referenceFormat: `SURNAME, First Name. Page title. In: Website title. Edition. Date of Publication (Year) [viewed Date of citation]. Available from: URL.`,
                 inTextCitation: [
                   {
                     type: "Parenthetical",
@@ -148,30 +110,13 @@ const Guide = () => {
                       "Name of Creator LAST NAME OR Page Title OR Website Title (YEAR)",
                   },
                 ],
-                example: `Doctoral theses, University of Delhi. In: University of Delhi. DU. 2010 [viewed 2026-03-11]. Available from: www.du.ac.in.`,
-                narrativeExample: `Doctoral theses, University of Delhi (2010)`,
-                parentheticalExample: `(Doctoral theses, University of Delhi 2010)`,
+                example: `DLIS. In: Delhi University. Web site. [2026]. [viewed 2026-04-09]. Available from: www.dlis.du.ac.in.`,
+                narrativeExample: `DLIS (2026)`,
+                parentheticalExample: `(DLIS 2026)`,
               },
               {
-                title: "9. Electronic Message",
-                referenceFormat: `SURNAME, First Name, [Year]. Title of the message. Title of the host message system. [Medium Designation]. Date message was sent; Time message was sent [viewed Date of citation]. [Available from: Availability and access]. Other Information.`,
-                inTextCitation: [
-                  {
-                    type: "Parenthetical",
-                    format: "(Name of Creator LAST NAME YEAR)",
-                  },
-                  {
-                    type: "Narrative",
-                    format: "Name of Creator LAST NAME (YEAR)",
-                  },
-                ],
-                example: `KUMAR, Vinay, [2026]. Refread Remote Access Software is accessible now. WhatsApp. [Online]. 20.02.2026; 10:00 viewed [10-03-2026].`,
-                narrativeExample: `Vinay Kumar (2026)`,
-                parentheticalExample: `(Vinay Kumar 2026)`,
-              },
-              {
-                title: "10. Patents",
-                referenceFormat: `SURNAME, First Name. Patent application country. Standard Identifiers of creators' public identities. Title of the information resource. Series title. Subsidiary creator. Date of application. Date of issuance. Patent number. [Available from: Persistent Identifiers]. Item attributes. [viewed Date of citation]. [Location]. Relationships.`,
+                title: "7. Patents",
+                referenceFormat: `SURNAME, First Name. Patent application country. Title. Date. Patent number.`,
                 inTextCitation: [
                   {
                     type: "Parenthetical",
@@ -179,9 +124,9 @@ const Guide = () => {
                   },
                   { type: "Narrative", format: "Name of Creator LAST NAME" },
                 ],
-                example: `MISRA, HO, BHARAGAVA, SK, India. Testing Water For Its Purity. 25/05/2001 . 184946. Available from: [https://iitr.res.in/En/patent_grand.aspx]. [viewed 10-03-2026].`,
-                narrativeExample: `HO MisraSK Bharagava`,
-                parentheticalExample: `(HO Misra & SK Bharagava)`,
+                example: `MISRA, HO, BHARAGAVA, SK, India. Testing water for its purity. 25/05/2001. Patent Number 184946.`,
+                narrativeExample: `MISRA, BHARAGAVA (2026)`,
+                parentheticalExample: `(MISRA, BHARAGAVA 2026)`,
               },
             ].map((item, index) => (
               <div

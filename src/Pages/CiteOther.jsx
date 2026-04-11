@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import WebsitesForm from "../Components/Websites/websites";
-import ElectronicForm from "../Components/ElectronicMessage/ElectronicMessage";
 import PatentsForm from "../Components/Patents/Patents";
 
 const CiteOther = () => {
@@ -10,8 +9,6 @@ const CiteOther = () => {
     switch (selectedForm) {
       case "websites":
         return <WebsitesForm />;
-      case "electronic":
-        return <ElectronicForm />;
       case "patents":
         return <PatentsForm />;
       default:
@@ -31,17 +28,6 @@ const CiteOther = () => {
           }`}
         >
           Websites
-        </button>
-        <span className="text-gray-400 text-xl hidden sm:inline">|</span>
-        <button
-          onClick={() => setSelectedForm("electronic")}
-          className={`px-4 py-2 font-semibold rounded-lg transition duration-300 ${
-            selectedForm === "electronic"
-              ? "bg-purple-600 text-white"
-              : "bg-purple-500 text-white hover:bg-purple-600"
-          }`}
-        >
-          Electronic Messages
         </button>
         <span className="text-gray-400 text-xl hidden sm:inline">|</span>
         <button
