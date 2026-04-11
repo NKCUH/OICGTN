@@ -125,7 +125,7 @@ const Tutorials = () => {
           </p>
           <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200">
             <iframe
-              src="/How To Use OICGT Guide.pdf"
+              src="/Guide OICGT.pdf"
               title="User Guide"
               className="w-full"
               style={{ height: "80vh" }}
@@ -133,7 +133,7 @@ const Tutorials = () => {
           </div>
           <div className="mt-3 text-right">
             <a
-              href="/How To Use OICGT Guide.pdf"
+              href="/Guide OICGT.pdf"
               download
               className="inline-block text-sm text-blue-600 hover:text-blue-800 underline"
             >

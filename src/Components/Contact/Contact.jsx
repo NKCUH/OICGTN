@@ -3,17 +3,17 @@ const people = [
     name: "Mr. Naresh Kumar",
     role: "Research Scholar",
     dept: "Department of Library & Information Science, II Floor, Tutorial Building University of Delhi, Delhi-7",
-    phone: "+91-9015590393",
-    email: "nkumar@libinfosci.du.ac.in;    nareshiiim.kumar@gmail.com",
-    details: "For more details : https://kumarnaresh.weebly.com/",
+    phone: "Mob. +91-9015590393",
+    email: "nkumar@libinfosci.du.ac.in; nareshiiim.kumar@gmail.com",
+    details: "https://kumarnaresh.weebly.com/",
   },
   {
     name: "Dr. Margam Madhusudhan",
-    role: "Professor & Principle Investigilator",
+    role: "Professor & PhD Supervisor",
     dept: "Department of Library & Information Science, II Floor, Tutorial Building University of Delhi, Delhi-7",
     phone: "Ph: 011-27666656  +91-9911817540",
     email: "mmadhusudhan@libinfosci.du.ac.in; madhumargam@gmail.com",
-    details: "For more details : http://atfi.dlis.du.ac.in/drmadhusudhan.php",
+    details: "http://atfi.dlis.du.ac.in/drmadhusudhan.php",
   },
 ];
 
@@ -21,7 +21,7 @@ const Contact = () => {
   return (
     <div className="w-full min-h-full rounded-lg bg-white flex flex-col items-center p-6 shadow-lg">
       <div className="max-w-3xl w-full mx-auto py-5">
-        <h1 className="text-3xl font-extrabold text-center text-black mb-5">
+        <h1 className="text-3xl font-extrabold text-center text-blue-800 mb-5">
           Contact Us
         </h1>
 

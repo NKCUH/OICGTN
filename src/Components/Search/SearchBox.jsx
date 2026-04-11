@@ -11,7 +11,7 @@ const routeForForm = (form) => {
       return "/book-and-monograph";
     case "book-contribution":
       return "/contribution-within-book";
-    case "Chapter in Book":
+    case "Book Chapter":
       return "/contribution-within-book";
     case "serial-contribution":
       return "/serial-contributions";

@@ -223,7 +223,7 @@ const HomeComponent = () => {
       {/* Autofill Search Box */}
       <div className="w-full flex justify-center px-4 mt-6">
         <div className="search-panel-hero">
-          <p className="search-panel-label">
+          <p className="search-panel-label font-bold text-blue-800 mb-2">
             🔍 Search &amp; Autocite Citation
           </p>
           <SearchBox />
@@ -233,7 +233,7 @@ const HomeComponent = () => {
       {/* Manual Citation heading */}
       <div className="w-full flex items-center gap-4 mt-12 md:px-10 px-4">
         <div className="flex-1 h-px bg-gray-300" />
-        <h2 className="text-xl font-extrabold text-[#192F59] tracking-wide whitespace-nowrap">
+        <h2 className="text-xl font-extrabold text-blue-800 tracking-wide whitespace-nowrap">
           ✍️ Manual Citation
         </h2>
         <div className="flex-1 h-px bg-gray-300" />
