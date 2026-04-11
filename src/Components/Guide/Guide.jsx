@@ -13,7 +13,7 @@ const Guide = () => {
             {[
               {
                 title: "1. Book",
-                referenceFormat: `SURNAME, First Name., [Year]. Title Edition. Place: Publisher.`,
+                referenceFormat: `SURNAME, First Name., [Year]. Title. Edition. Place: Publisher.`,
                 inTextCitation: [
                   {
                     type: "Parenthetical",
@@ -97,7 +97,7 @@ const Guide = () => {
               },
               {
                 title: "6. Websites",
-                referenceFormat: `SURNAME, First Name. Page title. In: Website title. Edition. Date of Publication (Year) [viewed Date of citation]. Available from: URL.`,
+                referenceFormat: `SURNAME, First Name. Page title. In: Website title. Web site. Date of Publication (Year). [viewed Date of citation]. Available from: URL.`,
                 inTextCitation: [
                   {
                     type: "Parenthetical",
@@ -125,9 +125,9 @@ const Guide = () => {
                   { type: "Narrative", format: "Name of Creator LAST NAME" },
                 ],
                 example: `MISRA, HO, BHARAGAVA, SK, India. Testing water for its purity. 25/05/2001. Patent Number 184946.`,
-                narrativeExample: `MISRA, BHARAGAVA (2026)`,
-                parentheticalExample: `(MISRA, BHARAGAVA 2026)`,
-              },
+                narrativeExample: `MISRA & BHARAGAVA (2026)`,
+                parentheticalExample: `(MISRA & BHARAGAVA 2026)`,
+              }, 
             ].map((item, index) => (
               <div
                 key={index}

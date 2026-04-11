@@ -80,9 +80,11 @@ const ContributionForm = () => {
 
     if (mode === "inText") {
       if (normalizedAuthors.length === 2) {
-        return normalizedAuthors.join(" & ");
+        return normalizedAuthors.join(" and ");
       }
-
+      if (normalizedAuthors.length > 2) {
+        return `${normalizedAuthors.slice(0, -1).join(", ")} and ${normalizedAuthors[normalizedAuthors.length - 1]}`;
+      }
       return normalizedAuthors.join(", ");
     }
 

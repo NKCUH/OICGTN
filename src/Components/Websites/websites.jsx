@@ -60,6 +60,17 @@ const WebsitesForm = () => {
     return safeLast ? safeLast.toUpperCase() : "";
   };
 
+  const formatIntextAuthorList = () => {
+    const authorNames = formFields
+      .map(([first, last]) => getLastName(first, last))
+      .filter(Boolean);
+
+    if (authorNames.length === 0) return "";
+    if (authorNames.length === 1) return authorNames[0];
+    if (authorNames.length === 2) return `${authorNames[0]} and ${authorNames[1]}`;
+    return `${authorNames.slice(0, -1).join(", ")} and ${authorNames[authorNames.length - 1]}`;
+  };
+
   const getYear = (date) => {
     if (!date) return "";
     const dateStr = String(date);
@@ -603,16 +614,7 @@ const WebsitesForm = () => {
                   className="text-blue-500 cursor-pointer"
                 >
                   {hasCreatorInput
-                    ? formFields.map((item, index) => {
-                        const lastName = getLastName(item[0], item[1]);
-                        if (!lastName) return null;
-                        return (
-                          <span key={index}>
-                            {lastName}
-                            {index < formFields.length - 1 ? " & " : ""}
-                          </span>
-                        );
-                      })
+                    ? formatIntextAuthorList()
                     : websitesCitation.pageTitle !== ""
                       ? websitesCitation.pageTitle
                       : websitesCitation.websiteTitle}{" "}
@@ -637,16 +639,7 @@ const WebsitesForm = () => {
                 >
                   {"("}
                   {hasCreatorInput
-                    ? formFields.map((item, index) => {
-                        const lastName = getLastName(item[0], item[1]);
-                        if (!lastName) return null;
-                        return (
-                          <span key={index}>
-                            {lastName}
-                            {index < formFields.length - 1 ? " & " : ""}
-                          </span>
-                        );
-                      })
+                    ? formatIntextAuthorList()
                     : websitesCitation.pageTitle !== ""
                       ? websitesCitation.pageTitle
                       : websitesCitation.websiteTitle}
