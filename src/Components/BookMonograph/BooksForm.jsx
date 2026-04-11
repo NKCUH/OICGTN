@@ -84,6 +84,16 @@ const BooksForm = ({ type }) => {
       return normalizedAuthors.join(", ");
     }
 
+    if (mode === "reference") {
+      if (normalizedAuthors.length === 2) {
+        return normalizedAuthors.join(" and ");
+      }
+      if (normalizedAuthors.length > 2) {
+        return `${normalizedAuthors.slice(0, -1).join(", ")} and ${normalizedAuthors[normalizedAuthors.length - 1]}`;
+      }
+      return normalizedAuthors.join("");
+    }
+
     return normalizedAuthors.join("");
   };
 

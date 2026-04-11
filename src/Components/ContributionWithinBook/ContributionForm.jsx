@@ -67,6 +67,20 @@ const ContributionForm = () => {
     return `${firstInitial} ${lastName}`;
   };
 
+  const formatReferenceEditorList = () => {
+    const editorNames = creatorHost
+      .map((editor) => getEditorDisplayName(editor))
+      .filter(Boolean);
+
+    if (editorNames.length === 0) return "";
+    if (editorNames.length === 1) return editorNames[0];
+    if (editorNames.length === 2) return `${editorNames[0]} and ${editorNames[1]}`;
+    if (editorNames.length > 5) {
+      return `${editorNames.slice(0, 5).join(", ")} et al.`;
+    }
+    return `${editorNames.slice(0, -1).join(", ")} and ${editorNames[editorNames.length - 1]}`;
+  };
+
   const formatAuthors = (authors, mode) => {
     const normalizedAuthors = authors
       .map((author) => getAuthorDisplayName(author[0], author[1], mode))
@@ -86,6 +100,16 @@ const ContributionForm = () => {
         return `${normalizedAuthors.slice(0, -1).join(", ")} and ${normalizedAuthors[normalizedAuthors.length - 1]}`;
       }
       return normalizedAuthors.join(", ");
+    }
+
+    if (mode === "reference") {
+      if (normalizedAuthors.length === 2) {
+        return normalizedAuthors.join(" and ");
+      }
+      if (normalizedAuthors.length > 2) {
+        return `${normalizedAuthors.slice(0, -1).join(", ")} and ${normalizedAuthors[normalizedAuthors.length - 1]}`;
+      }
+      return normalizedAuthors.join("");
     }
 
     return normalizedAuthors.join("");
@@ -551,14 +575,7 @@ const ContributionForm = () => {
                 ) : (
                   <>
                     In:{" "}
-                    {creatorHost.map((item, index) => {
-                      return (
-                        <span key={index}>
-                          {getEditorDisplayName(creatorHost[index])}
-                          {index < creatorHost.length - 1 && ", "}
-                        </span>
-                      );
-                    })}
+                    {formatReferenceEditorList()}
                     {", "}
                   </>
                 )}

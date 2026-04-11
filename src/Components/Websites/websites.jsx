@@ -71,6 +71,17 @@ const WebsitesForm = () => {
     return `${authorNames.slice(0, -1).join(", ")} and ${authorNames[authorNames.length - 1]}`;
   };
 
+  const formatReferenceAuthorList = () => {
+    const authorNames = formFields
+      .map(([first, last]) => formatCreatorForCitation(first, last))
+      .filter(Boolean);
+
+    if (authorNames.length === 0) return "";
+    if (authorNames.length === 1) return authorNames[0];
+    if (authorNames.length === 2) return `${authorNames[0]} and ${authorNames[1]}`;
+    return `${authorNames.slice(0, -1).join(", ")} and ${authorNames[authorNames.length - 1]}`;
+  };
+
   const getYear = (date) => {
     if (!date) return "";
     const dateStr = String(date);
@@ -437,11 +448,7 @@ const WebsitesForm = () => {
           <div style={{ textAlign: "left" }}>
             <div id="output">
               <p ref={ref} id="outputResult">
-                {formFields.map((item, index) => {
-                  const formatted = formatCreatorForCitation(item[0], item[1]);
-                  if (!formatted) return null;
-                  return <span key={index}>{formatted}</span>;
-                })}
+                {formatReferenceAuthorList()}
 
 
 

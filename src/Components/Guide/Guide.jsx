@@ -41,9 +41,9 @@ const Guide = () => {
                     format: "Name of Creator LAST NAME (YEAR)",
                   },
                 ],
-                example: `SPEIRS, T., WILSON, B., LECKIE, [2021]. Higher Chemistry: Comprehensive textbook for the CfE (Leckie Student Book). London: Harper Collins UK, 1st. Available from: http://books.google.co.in/books?id=QbkjEAAAQBAJ&dq=Higher+Chemistry:+Comprehensive+textbook+for+the+CfE&hl=&source=gbs_api.`,
-                narrativeExample: `SPEIRS, WILSON, LECKIE (2021)`,
-                parentheticalExample: `(SPEIRS, WILSON, LECKIE 2021)`,
+                example: `SPEIRS, T., WILSON, B., and LECKIE, [2021]. Higher Chemistry: Comprehensive textbook for the CfE (Leckie Student Book). London: Harper Collins UK, 1st. Available from: http://books.google.co.in/books?id=QbkjEAAAQBAJ&dq=Higher+Chemistry:+Comprehensive+textbook+for+the+CfE&hl=&source=gbs_api.`,
+                narrativeExample: `SPEIRS, WILSON, and LECKIE (2021)`,
+                parentheticalExample: `(SPEIRS, WILSON, and LECKIE 2021)`,
               },
               {
                 title: "3.  Book Chapter",
@@ -61,8 +61,8 @@ const Guide = () => {
                   },
                 ],
                 example: `KUMAR, N., CASAROSA, V., [2017]. Expressing Needs of Digital Audio-Visual Applications in Different Communities of Practice for Long-Term Preservation. In: N. KUMAR, ed. <i>Interdisciplinary Digital Preservation Tools and Technologies</i>. New York: IGI Global, pp. 54-78. DOI 10.4018/978-1-5225-1653-8.ch004.`,
-                narrativeExample: `KUMAR & CASAROSA (2017, p. 54-78)`,
-                parentheticalExample: `(KUMAR & CASAROSA 2017, p. 54-78)`,
+                narrativeExample: `KUMAR and CASAROSA (2017, p. 54-78)`,
+                parentheticalExample: `(KUMAR and CASAROSA 2017, p. 54-78)`,
               },
               {
                 title: "4. Journal",
@@ -75,8 +75,8 @@ const Guide = () => {
                   { type: "Narrative", format: "Title of the Journal (YEAR)" },
                 ],
                 example: `MADHUSUDHAN, M., PANDEY, P., SINGH, B., [2025]. A systematic literature review on academic writing tools. In: World Digital Libraries: An International Journal (WDL). 18(2). pp. 8–13.`,
-                narrativeExample: `MADHUSUDHAN, PANDEY, SINGH (2025)`,
-                parentheticalExample: `(MADHUSUDHAN, PANDEY, SINGH 2025)`,
+                narrativeExample: `MADHUSUDHAN, PANDEY, and SINGH (2025)`,
+                parentheticalExample: `(MADHUSUDHAN, PANDEY, and SINGH 2025)`,
               },
               {
                 title: "5. e-Journal",
@@ -92,8 +92,8 @@ const Guide = () => {
                   },
                 ],
                 example: `KUMAR, N., MADHUSUDHAN, M., [2024]. Referencing revisited: A Comparative Look at MLA, APA and IS:IDBR. In: Annals of Library and Information Studies. CSIR-National Institute of Science Communication and Policy Research (NIScPR), 71. pp. 341–348. DOI 10.56042/alis.v71i3.10353. Available from: https://or.niscpr.res.in/index.php/ALIS/article/view/10353/3447.`,
-                narrativeExample: `KUMAR & MADHUSUDHAN (2024, p. 341–348)`,
-                parentheticalExample: `(KUMAR & MADHUSUDHAN 2024, p. 341–348)`,
+                narrativeExample: `KUMAR and MADHUSUDHAN (2024, p. 341–348)`,
+                parentheticalExample: `(KUMAR and MADHUSUDHAN 2024, p. 341–348)`,
               },
               {
                 title: "6. Websites",
@@ -125,8 +125,8 @@ const Guide = () => {
                   { type: "Narrative", format: "Name of Creator LAST NAME" },
                 ],
                 example: `MISRA, HO, BHARAGAVA, SK, India. Testing water for its purity. 25/05/2001. Patent Number 184946.`,
-                narrativeExample: `MISRA & BHARAGAVA (2026)`,
-                parentheticalExample: `(MISRA & BHARAGAVA 2026)`,
+                narrativeExample: `MISRA and BHARAGAVA (2026)`,
+                parentheticalExample: `(MISRA and BHARAGAVA 2026)`,
               }, 
             ].map((item, index) => (
               <div
