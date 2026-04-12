@@ -60,7 +60,7 @@ const Guide = () => {
                       "Name of Creator LAST NAME (YEAR, Page Range)",
                   },
                 ],
-                example: `KUMAR, N., and CASAROSA, V., [2017]. Expressing Needs of Digital Audio-Visual Applications in Different Communities of Practice for Long-Term Preservation. In: N. KUMAR, ed. <i>Interdisciplinary Digital Preservation Tools and Technologies</i>. New York: IGI Global, pp. 54-78. DOI 10.4018/978-1-5225-1653-8.ch004.`,
+                example: `KUMAR, N., and CASAROSA, V., [2017]. Expressing Needs of Digital Audio-Visual Applications in Different Communities of Practice for Long-Term Preservation. In: N. KUMAR, ed. Interdisciplinary Digital Preservation Tools and Technologies. New York: IGI Global, pp. 54-78. DOI 10.4018/978-1-5225-1653-8.ch004.`,
                 narrativeExample: `KUMAR and CASAROSA (2017, p. 54-78)`,
                 parentheticalExample: `(KUMAR and CASAROSA 2017, p. 54-78)`,
               },
