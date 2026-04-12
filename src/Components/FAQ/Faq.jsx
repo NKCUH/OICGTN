@@ -23,7 +23,7 @@ const Faq = () => {
             },
             {
               question: "It generates citations for which resources?",
-              answer: "It generates citations for sources like print books, book chapters, e-books, print journals, research papers, e-journals, websites, patents, and messages, etc."
+              answer: "It generates citations for sources like print books, book chapters, e-books, print journals, research papers, e-journals, websites, and patents etc."
             },
             {
               question: "How does this Citation Tool work?",
