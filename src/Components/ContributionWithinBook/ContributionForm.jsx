@@ -540,7 +540,7 @@ const ContributionForm = () => {
           </center>
           <br />
           {/* SURNAME, First Name, [Year]. Title of the contribution. Additional General Information. In: Title of the host serial. [Medium Designation]
-          . Subsidiary Titles. Edition. Place: Publisher, Date of Publication. Numeration (of volume)
+          . Subsidiary Titles. Edition. Place: Publisher. Date of Publication. Numeration (of volume)
           , Range of page number(s) of the contribution, [viewed Date of citation]. Standard Identifier. [Available from: Availability and access]. At: [Location]. */}
 
           <div style={{ textAlign: "left" }}>
@@ -643,7 +643,7 @@ const ContributionForm = () => {
                         </span>
                       );
                     })}
-                    {", "}
+                    {". "}
                   </>
                 )}
                 {contributionCitation.year === "" &&

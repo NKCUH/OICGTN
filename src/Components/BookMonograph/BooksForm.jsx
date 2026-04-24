@@ -448,6 +448,14 @@ const BooksForm = ({ type }) => {
                     {". "}
                   </>
                 )}
+                 {booksCitation.edition === "" ? (
+                  ""
+                ) : (
+                  <>
+                    {booksCitation.edition}
+                    {". "}
+                  </>
+                )}
                 {booksCitation.place === "" ? "" : <>{booksCitation.place}: </>}
                 {publisher.length <= 1 &&
                 (publisher[0] === "" || publisher[0] === undefined) ? (
@@ -458,11 +466,11 @@ const BooksForm = ({ type }) => {
                       return (
                         <span key={index}>
                           {publisher[index]}
-                          {index < publisher.length - 1 && ", "}
+                          {index < publisher.length - 1 && ". "}
                         </span>
                       );
                     })}
-                    {", "}
+                    {". "}
                   </>
                 )}
                 {booksCitation.dateOfCitation === "" ? (
@@ -472,15 +480,7 @@ const BooksForm = ({ type }) => {
                     [viewed {booksCitation.dateOfCitation}]{". "}{" "}
                   </>
                 )}
-                {booksCitation.edition === "" ? (
-                  ""
-                ) : (
-                  <>
-                    {booksCitation.edition}
-                    {". "}
-                  </>
-                )}
-                {booksCitation.seriesTitleAndNumber === "" ? (
+                 {booksCitation.seriesTitleAndNumber === "" ? (
                   ""
                 ) : (
                   <>

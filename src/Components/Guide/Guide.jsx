@@ -13,7 +13,7 @@ const Guide = () => {
             {[
               {
                 title: "1. Book",
-                referenceFormat: `LAST NAME, First Name., [Year]. Title. Edition. Place: Publisher.`,
+                referenceFormat: `LAST NAME, First Name, [Year]. Title. Edition. Place: Publisher.`,
                 inTextCitation: [
                   {
                     type: "Parenthetical",
@@ -30,7 +30,7 @@ const Guide = () => {
               },
               {
                 title: "2. e-Book",
-                referenceFormat: `LAST NAME, First Name., [Year]. Title. Edition. Place: Publisher. Available from: URL.`,
+                referenceFormat: `LAST NAME, First Name, [Year]. Title. Edition. Place: Publisher. Available from: URL.`,
                 inTextCitation: [
                   {
                     type: "Parenthetical",
@@ -47,7 +47,7 @@ const Guide = () => {
               },
               {
                 title: "3.  Book Chapter",
-                referenceFormat: `LAST NAME, First Name., [Year]. Chapter Title. In: Editor, ed. Book Title. Place: Publisher, Vol. No./Series. Page Range. DOI. Available from: URL.`,
+                referenceFormat: `LAST NAME, First Name, [Year]. Chapter Title. In: Editor, ed. Book Title. Place: Publisher. Vol. No./Series. Page Range. DOI. Available from: URL.`,
                 inTextCitation: [
                   {
                     type: "Parenthetical",
